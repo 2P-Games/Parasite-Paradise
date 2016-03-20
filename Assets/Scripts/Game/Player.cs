@@ -2,12 +2,12 @@
 using System.Collections;
 
 public class Player : MonoBehaviour {
+	
+    void Start()
+    {
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
+    }
+
 	// Update is called once per frame
 	void Update () {
 
@@ -38,9 +38,29 @@ public class Player : MonoBehaviour {
         }
     }
 
+    public int TakeDamage(int damageAmount)
+    {
+
+        if((this.health -= damageAmount) <= 0)
+        {
+            this.health = 0;
+            this.Die();
+        }
+
+        return this.health;
+    }
+
+    private void Die()
+    {
+        // player die functionality
+    }
+
     [SerializeField]
     private float acceleration;
 
     [SerializeField]
     private float maxSpeed;
+
+    [SerializeField]
+    private int health = 100;
 }
