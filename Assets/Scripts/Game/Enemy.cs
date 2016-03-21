@@ -3,6 +3,13 @@ using System.Collections;
 
 public abstract class Enemy : BasicObject {
 
+    public enum BehaviorState
+    {
+        Alerted, // player's presence is known
+        Passive, // player has not been spotted
+        Restless // player not necessarily spotted, but myabe sketchy things were heard, seen, etc.
+    }
+
     protected new virtual void Start()
     {
         base.Start();

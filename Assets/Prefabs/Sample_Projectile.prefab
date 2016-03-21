@@ -43,6 +43,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 430188}
   - 54: {fileID: 5448956}
+  - 114: {fileID: 11400936}
   m_Layer: 11
   m_Name: Sample_Projectile
   m_TagString: Enemy
@@ -103,6 +104,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &11400936
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 178402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89a4101f1b72d184588e1b77b4d079fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeToDeath: 10
 --- !u!198 &19825688
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -548,28 +561,28 @@ ParticleSystem:
           inSlope: 0
           outSlope: 0
           tangentMode: 0
-        - time: 0.16972832
-          value: 0.7297298
+        - time: 0.17922199
+          value: 0.6512984
           inSlope: 1.4899671
           outSlope: 1.4899671
           tangentMode: 0
-        - time: 0.40377605
-          value: 0.20270279
+        - time: 0.4006115
+          value: 0.085055746
           inSlope: 0.013709068
           outSlope: 0.013709068
           tangentMode: 0
-        - time: 0.60029685
-          value: 0.75172794
+        - time: 0.5749804
+          value: 0.6929044
           inSlope: 2.2509694
           outSlope: 2.2509694
           tangentMode: 0
         - time: 0.78711206
-          value: 0.20270279
+          value: 0.026232228
           inSlope: -0.680089
           outSlope: -0.680089
           tangentMode: 0
         - time: 1
-          value: 0.7972973
+          value: 0.6600424
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -3217,6 +3230,46 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[2].time
+      value: 0.4006115
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[2].value
+      value: 0.085055746
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[4].value
+      value: 0.026232228
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[3].time
+      value: 0.5749804
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[3].value
+      value: 0.6929044
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[1].time
+      value: 0.17922199
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[1].value
+      value: 0.6512984
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[5].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[5].value
+      value: 0.6600424
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: timeToDeath
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
