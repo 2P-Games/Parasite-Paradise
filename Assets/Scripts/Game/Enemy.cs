@@ -20,10 +20,6 @@ public abstract class Enemy : BasicObject {
     protected virtual void Update()
     {
 
-        /** Looking at player */
-        // TODO: Add conditions to this later, such as line of sight.
-        this.LookAtPlayer();
-
         /** Attacking */
         if (this.CanAttack())
         {
@@ -32,6 +28,12 @@ public abstract class Enemy : BasicObject {
         else if (this.IsAttackOnCooldown())
         {
             this.internalAttackTimer -= Time.deltaTime;
+        }
+
+        /** Moving **/
+        if(this.CanMove())
+        {
+            this.Move();
         }
     }
 
@@ -83,11 +85,13 @@ public abstract class Enemy : BasicObject {
         }
     }
 
+    // simple method to rotate the transform to look at the player's transform
     protected void LookAtPlayer()
     {
         this.transform.LookAt(this.playerReference.transform);
     }
 
+    // returns true if this enemy has attacked recently, false otherwise.
     protected bool IsAttackOnCooldown()
     {
         return this.internalAttackTimer > 0.0f;
@@ -106,9 +110,59 @@ public abstract class Enemy : BasicObject {
         return arrayOfAttacks[Random.Range(0, arrayOfAttacks.Length)];
     }
 
+    // simple health reduction
+    public int TakeDamage(int damageAmount)
+    {
+
+        if ((this.health -= damageAmount) <= 0)
+        {
+            this.health = 0;
+            this.Die();
+        }
+
+        return this.health;
+    }
+
+    protected virtual void Die()
+    {
+        /** Play death animation **/
+
+        /** Play death sound **/
+
+        // etc.
+    }
+
+    // calculates and returns if this enemy can move
+    protected bool CanMove()
+    {
+        return movementEnabled && moveDelay <= 0.0f;
+    }
+
+
+    // fired when something remains within a collider (designated as a trigger)
+    protected virtual void OnTriggerStay(Collider collider)
+    {
+        // all enemies look at the player when the player enters the trigger AOE
+        if(collider.tag.Equals("Player"))
+        {
+            this.LookAtPlayer();
+        }
+    }
+
     // internal timer which will count down;
     // if == 0, an attack can be performed.
     protected float internalAttackTimer;
+
+    // health of this enemy
+    [SerializeField]
+    protected int health;
+
+    // a random value that gets set after moving to delay random movement 
+    protected float moveDelay;
+
+    // can this enemy move at all?
+    [SerializeField]
+    protected bool movementEnabled;
 
     // array of possible attacks that this enemy can make
     protected Attack[] arrayOfAttacks;

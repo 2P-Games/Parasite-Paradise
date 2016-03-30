@@ -9,13 +9,20 @@ public class Player : MonoBehaviour {
         UIUpdater.UpdateHealthText(this.health);
     }
 
-	// Update is called once per frame
-	void Update () {
+    // Update is called once per frame
+    void Update () {
 
         if (this.controlsEnabled)
         {
+            // player looking at mouse
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            Vector3 mousePosition = new Vector3(ray.origin.x, ray.origin.y, transform.position.z);
+            Quaternion rotationQuaternion = Quaternion.LookRotation(mousePosition - transform.position);
+            rotationQuaternion.y = 0;
+            rotationQuaternion.x = 0;
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, rotationQuaternion, rotationSpeed * Time.deltaTime);
 
-            /** Note: Using GetKey() because force needs to be added every frame while key is down, not only once. */
+            /** Note: Using GetKey() because force needs to be added every frame while key is down, not only once. **/
 
             // upward movement
             if (Input.GetKey(KeyCode.W))
@@ -68,6 +75,21 @@ public class Player : MonoBehaviour {
         Object.Destroy(this.gameObject);
     }
 
+
+    void OnCollisionEnter(Collision collision)
+    {
+        switch (collision.collider.tag)
+        {
+            case "Enemy":
+                // collision with the collider of the enemy gameObject
+                Debug.Log("Player collision with " + collision.collider.gameObject.name);
+                break;
+            default:
+                // walls, etc.
+                break;
+        }
+    }
+
     [SerializeField]
     private float acceleration;
 
@@ -76,6 +98,9 @@ public class Player : MonoBehaviour {
 
     [SerializeField]
     private int health = 100;
+
+    [SerializeField]
+    private float rotationSpeed = 200.0f;
 
     // if the controls need to be disabled for any reason, this can be turned off.
     private bool controlsEnabled;
