@@ -12,8 +12,8 @@ GameObject:
   - 65: {fileID: 6546680}
   - 23: {fileID: 2302850}
   - 114: {fileID: 11476452}
-  - 114: {fileID: 11466614}
   - 54: {fileID: 5428008}
+  - 135: {fileID: 13552524}
   m_Layer: 10
   m_Name: Basic_Villager
   m_TagString: Enemy
@@ -28,7 +28,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 189438}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.11, y: 0.27, z: -2}
+  m_LocalPosition: {x: 7.82, y: 0.02, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -79,7 +79,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 8
   m_CollisionDetection: 0
 --- !u!65 &6546680
 BoxCollider:
@@ -93,24 +93,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &11466614
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 189438}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 808e8f87b660ec04b88090aae85c1393, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  delay: 3
-  range: 50
-  damage: 5
-  adjustmentVector: {x: 0, y: 0, z: 0}
-  speed: 100
-  AttackPrefab: {fileID: 178402, guid: f5ba952cc5068f142b8e53713d3ce34e, type: 2}
-  attackType: 1
 --- !u!114 &11476452
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -122,6 +104,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bd2e003f012bd649a4e72deb3efaa95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 100
+  moveDelay: 0
+  MAXIMUM_MOVEMENT_DELAY: 3
+  movementEnabled: 1
+  destinationPathNode: {fileID: 0}
+  walkingSpeed: 10
+--- !u!135 &13552524
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 189438}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 3.46
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

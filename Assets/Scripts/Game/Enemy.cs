@@ -15,6 +15,7 @@ public abstract class Enemy : BasicObject {
         base.Start();
         internalAttackTimer = 0.0f;
         this.arrayOfAttacks = this.gameObject.GetComponents<Attack>();
+        this.destinationPathNode = PathNodeLibrary.GetNearestPathNodeFromLocation(this.gameObject.transform.position);
     }
 
     protected virtual void Update()
@@ -34,12 +35,18 @@ public abstract class Enemy : BasicObject {
         if(this.CanMove())
         {
             this.Move();
+        } else
+        {
+            this.moveDelay -= Time.deltaTime;
         }
     }
 
     // virtual baseline move method 
     public virtual void Move()
     {
+
+        float step = Time.deltaTime * this.walkingSpeed;
+        this.transform.position = Vector3.MoveTowards(this.transform.position, this.destinationPathNode.transform.position, step);
 
     }
 
@@ -138,6 +145,11 @@ public abstract class Enemy : BasicObject {
         return movementEnabled && moveDelay <= 0.0f;
     }
 
+    // called when the enemy reaches its destination path node from moving
+    public void ReachedPathNode()
+    {
+        this.moveDelay += Random.Range(this.MAXIMUM_MOVEMENT_DELAY / 2.0f, this.MAXIMUM_MOVEMENT_DELAY);
+    }
 
     // fired when something remains within a collider (designated as a trigger)
     protected virtual void OnTriggerStay(Collider collider)
@@ -158,7 +170,11 @@ public abstract class Enemy : BasicObject {
     protected int health;
 
     // a random value that gets set after moving to delay random movement 
+    [SerializeField]
     protected float moveDelay;
+
+    [SerializeField]
+    protected float MAXIMUM_MOVEMENT_DELAY;
 
     // can this enemy move at all?
     [SerializeField]
@@ -167,4 +183,10 @@ public abstract class Enemy : BasicObject {
     // array of possible attacks that this enemy can make
     protected Attack[] arrayOfAttacks;
 
+    // path node to walk to next when deciding to move
+    public PathNode destinationPathNode;
+
+    // walking speed of this enemy
+    [SerializeField]
+    protected float walkingSpeed;
 }
