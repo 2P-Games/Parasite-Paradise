@@ -10,9 +10,26 @@ public class GameManager : BasicObject
         base.Start();
     }
 
-    //// Update is called once per frame
-    //void Update () {
+    // Update is called once per frame
+    void Update()
+    {
+        /** Game Pausing and Unpausing **/
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            if (!isPaused)
+            {
+                Time.timeScale = 0;
+                isPaused = true;
+            } else
+            {
+                Time.timeScale = 1;
+                isPaused = false;
+            }
 
-    //   }
+            UIUpdater.TogglePauseOverlay();
+        }
+    }
+
+    private bool isPaused = false;
 
 }
