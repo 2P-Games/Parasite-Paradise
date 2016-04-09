@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class Player : MonoBehaviour {
 	
@@ -47,7 +48,116 @@ public class Player : MonoBehaviour {
             {
                 gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(maxSpeed, 0, 0) * this.acceleration);
             }
+
         }
+
+        // attempt to acquire an enemy target once
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+
+            // if no enemies are close enough or is already infecting an enemy, cannot possess new target.
+            if(EnemiesInRange.Capacity == 0 || isPossessingEnemy)
+            {
+                return;
+            }
+
+            // perform a min distance check; pick the closest enemy to the player.
+            GameObject closestEnemy = EnemiesInRange[0];
+      
+            foreach(GameObject obj in this.EnemiesInRange) {
+                if(Vector3.Distance(obj.transform.position, gameObject.transform.position) < Vector3.Distance(closestEnemy.transform.position, gameObject.transform.position))
+                {
+                    closestEnemy = obj;
+                }
+            }
+
+            // rotate to look at the closest enemy so it looks more natural.
+            gameObject.transform.LookAt(closestEnemy.transform);
+
+            // extract the enemy script
+            infectionTarget = closestEnemy.GetComponent<Enemy>();
+
+            // turn off movement while infecting
+            this.controlsEnabled = false;
+            infectionTarget.EnterInfectionStasis();
+
+
+        }
+
+        // continue to hold down spacebar to fill infection bar
+        if (Input.GetKey(KeyCode.Space))
+        {
+
+            // if we currently are not possessing an enemy, and a target has been successfully selected, begin infection.
+            if (infectionTarget != null)
+            {
+                if (infectTimer < infectionTarget.timeToInfect)
+                {
+                    // increase "infection" meter
+                    infectTimer += Time.deltaTime * 2.0f;
+                } else
+                {
+                    // infection complete!
+                    this.Infect(infectionTarget);
+                }
+
+            }
+        }
+
+        if(Input.GetKeyUp(KeyCode.Space))
+        {
+            if (this.infectTimer > 0.0f)
+            {
+                // space bar released, reset timer and enable controls
+                this.controlsEnabled = true;
+                this.infectionTarget.ReleaseFromInfectionStasis();
+                this.infectTimer = 0.0f;
+                this.infectionTarget = null;
+            }
+        }
+    }
+
+    public void Infect(Enemy targetEnemy)
+    {
+        this.isPossessingEnemy = true;
+
+        GameObject enemyObject = targetEnemy.gameObject;
+
+        // steal the mesh to make it look like the enemy
+        UnityEditorInternal.ComponentUtility.CopyComponent(enemyObject.GetComponent<SkinnedMeshRenderer>());
+        UnityEditorInternal.ComponentUtility.PasteComponentValues(gameObject.GetComponent<SkinnedMeshRenderer>());
+
+        // for cubes/enemies without a skinned mesh renderer
+        UnityEditorInternal.ComponentUtility.CopyComponent(enemyObject.GetComponent<MeshRenderer>());
+        UnityEditorInternal.ComponentUtility.PasteComponentValues(gameObject.GetComponent<MeshRenderer>());
+
+        // "kill" the enemy
+        targetEnemy.TakeDamage(9999);
+
+        // reset timers
+        this.infectTimer = 0.0f;
+
+        // re-enable controls, just in case.
+        this.controlsEnabled = true;
+    }
+
+
+    public void ReleaseFromEnemy()
+    {
+        // you somehow got here without possessing an enemy
+        if(!isPossessingEnemy)
+        {
+            return;
+        }
+
+        // reset infection values
+        this.isPossessingEnemy = false;
+        infectionTarget = null;
+
+        // re-acquire parasite mesh
+        UnityEditorInternal.ComponentUtility.CopyComponent(this.DefaultSkinnedMesh);
+        UnityEditorInternal.ComponentUtility.PasteComponentValues(gameObject.GetComponent<SkinnedMeshRenderer>());
+
     }
 
     public int TakeDamage(int damageAmount)
@@ -75,6 +185,23 @@ public class Player : MonoBehaviour {
         Object.Destroy(this.gameObject);
     }
 
+    // add enemies that are close enough to an arraylist
+    void OnTriggerEnter(Collider collider)
+    {
+        if(collider.gameObject.tag.Equals("Enemy"))
+        {
+            this.EnemiesInRange.Add(collider.gameObject);
+        }
+    }
+
+    // remove them once they leave the radius
+    void OnTriggerExit(Collider collider)
+    {
+        if (collider.gameObject.tag.Equals("Enemy"))
+        {
+            this.EnemiesInRange.Remove(collider.gameObject);
+        }
+    }
 
     void OnCollisionEnter(Collision collision)
     {
@@ -102,6 +229,19 @@ public class Player : MonoBehaviour {
     [SerializeField]
     private float rotationSpeed = 200.0f;
 
+    [SerializeField]
+    private float infectTimer = 0.0f;
+
+    private Enemy infectionTarget;
+
+    // are we currently possessing an enemy
+    public bool isPossessingEnemy = false;
+
     // if the controls need to be disabled for any reason, this can be turned off.
     private bool controlsEnabled;
+
+    private List<GameObject> EnemiesInRange = new List<GameObject>();
+
+    // used to reset the mesh after infection
+    public SkinnedMeshRenderer DefaultSkinnedMesh;
 }

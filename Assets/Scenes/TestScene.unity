@@ -173,7 +173,6 @@ Canvas:
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
-  m_SortingBucketNormalizedSize: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -501,6 +500,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 56
   m_CollisionDetection: 0
+--- !u!135 &303113062
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 303113059}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.93
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &365933290
 Prefab:
   m_ObjectHideFlags: 0
@@ -820,6 +831,14 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11476452, guid: 398158d93bf29c64b8f5d0d2911d77b2, type: 2}
+      propertyPath: timeToInfect
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2302850, guid: 398158d93bf29c64b8f5d0d2911d77b2, type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d5ce9db8b8bbc465bbffc267466a6326, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 398158d93bf29c64b8f5d0d2911d77b2, type: 2}
   m_IsPrefabParent: 0
@@ -874,6 +893,14 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11476452, guid: 398158d93bf29c64b8f5d0d2911d77b2, type: 2}
+      propertyPath: timeToInfect
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2302850, guid: 398158d93bf29c64b8f5d0d2911d77b2, type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d5ce9db8b8bbc465bbffc267466a6326, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 398158d93bf29c64b8f5d0d2911d77b2, type: 2}
   m_IsPrefabParent: 0

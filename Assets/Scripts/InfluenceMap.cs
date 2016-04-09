@@ -227,10 +227,10 @@ class InfluenceGrid {
 	        }
 	    }
 
-		for(int i = 0; i < m_Grid.GetLength(); i++) {
+		for(int i = 0; i < m_Grid.GetLength(0); i++) {
 			for (int j = 0; j < m_Grid.GetLength (1); j++) {
 				m_Grid [i, j].myColor.a = 255;
-				InfluenceMapTexture.SetPixel (i, jvalue, m_Grid [i, j].myColor);
+				InfluenceMapTexture.SetPixel (i, j, m_Grid [i, j].myColor);
 			}
 		}
 		InfluenceMapTexture.Apply ();

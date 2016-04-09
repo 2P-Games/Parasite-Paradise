@@ -47,7 +47,7 @@ public abstract class Enemy : BasicObject {
 
         float step = Time.deltaTime * this.walkingSpeed;
         this.transform.position = Vector3.MoveTowards(this.transform.position, this.destinationPathNode.transform.position, step);
-
+    
     }
 
     // virtual baseline attack method 
@@ -108,6 +108,7 @@ public abstract class Enemy : BasicObject {
     protected bool CanAttack()
     {
         return !IsAttackOnCooldown() && // has an attack been made recently
+            this.attackEnabled && // not being infected
             arrayOfAttacks.Length > 0; // Do I have any possible attacks to make
     }
 
@@ -130,6 +131,26 @@ public abstract class Enemy : BasicObject {
         return this.health;
     }
 
+    public void EnterInfectionStasis()
+    {
+
+        // probably start flailing and doing panic animations
+
+        // disable movement and attacks
+        this.movementEnabled = false;
+        this.attackEnabled = false;
+
+    }
+
+    public void ReleaseFromInfectionStasis()
+    {
+
+        // reenable movement and attacks
+        this.movementEnabled = true;
+        this.attackEnabled = true;
+
+    }
+
     protected virtual void Die()
     {
         /** Play death animation **/
@@ -137,6 +158,9 @@ public abstract class Enemy : BasicObject {
         /** Play death sound **/
 
         // etc.
+
+        // remove self from world
+        Destroy(gameObject);
     }
 
     // calculates and returns if this enemy can move
@@ -161,6 +185,8 @@ public abstract class Enemy : BasicObject {
         }
     }
 
+    public float timeToInfect;
+
     // internal timer which will count down;
     // if == 0, an attack can be performed.
     protected float internalAttackTimer;
@@ -176,9 +202,11 @@ public abstract class Enemy : BasicObject {
     [SerializeField]
     protected float MAXIMUM_MOVEMENT_DELAY;
 
-    // can this enemy move at all?
+    // can this enemy move?
     [SerializeField]
     protected bool movementEnabled;
+
+    protected bool attackEnabled = true;
 
     // array of possible attacks that this enemy can make
     protected Attack[] arrayOfAttacks;
