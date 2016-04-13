@@ -140,7 +140,41 @@ ModelImporter:
     optimizeGameObjects: 0
     motionNodeName: 
     animationImportErrors: 
-    animationImportWarnings: 
+    animationImportWarnings: "\nClip 'Attack_Right' has import animation warnings
+      that might lower retargeting quality:\nNote: Activate translation DOF on avatar
+      to improve retargeting quality.\n\t'hips' is inbetween humanoid transforms and
+      has rotation animation that will be discarded.\n\t'shin_R_001' is inbetween
+      humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'Dead' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'hips'
+      has translation animation that will be discarded.\n\t'hips' is inbetween humanoid
+      transforms and has rotation animation that will be discarded.\n\t'shin_L_001'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'shin_R_001'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'GetHit' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'shin_R_001'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'Walk' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'hips'
+      has translation animation that will be discarded.\n\t'shin_L_001' is inbetween
+      humanoid transforms and has rotation animation that will be discarded.\n\t'shin_R_001'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'Walk_Attack' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'hips'
+      has translation animation that will be discarded.\n\t'shin_L_001' is inbetween
+      humanoid transforms and has rotation animation that will be discarded.\n\t'shin_R_001'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'Walk_Attack2' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'hips'
+      has translation animation that will be discarded.\n\t'hips' is inbetween humanoid
+      transforms and has rotation animation that will be discarded.\n\t'shin_L_001'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'shin_R_001'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'Walk_GetHit' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'hips'
+      has translation animation that will be discarded.\n\t'shin_L_001' is inbetween
+      humanoid transforms and has rotation animation that will be discarded.\n\t'shin_R_001'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n"
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     animationCompression: 3
@@ -721,7 +755,7 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 1
+      loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0

@@ -30,3 +30,10 @@ sysinfo.txt
 Icon?
 ehthumbs.db
 [Tt]humbs.db
+
+# ===== #
+# Other #
+# ===== #
+/*.unitypackage
+/*.unitypackage.meta
+ProjectSettings/ProjectVersion.txt
