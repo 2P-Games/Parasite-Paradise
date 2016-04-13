@@ -1,0 +1,1233 @@
+fileFormatVersion: 2
+guid: 807a75a0f2460ef4eb409bda25122b8d
+timeCreated: 1446755958
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: abdomen
+    100002: abdomen 1
+    100004: abdomen 10
+    100006: abdomen 11
+    100008: abdomen 12
+    100010: abdomen 13
+    100012: abdomen 14
+    100014: abdomen 15
+    100016: abdomen 16
+    100018: abdomen 17
+    100020: abdomen 18
+    100022: abdomen 2
+    100024: abdomen 3
+    100026: abdomen 4
+    100028: abdomen 5
+    100030: abdomen 6
+    100032: abdomen 7
+    100034: abdomen 8
+    100036: abdomen 9
+    100038: abdomen2
+    100040: abdomen2 1
+    100042: abdomen2 10
+    100044: abdomen2 2
+    100046: abdomen2 3
+    100048: abdomen2 4
+    100050: abdomen2 5
+    100052: abdomen2 6
+    100054: abdomen2 7
+    100056: abdomen2 8
+    100058: abdomen2 9
+    100060: chest
+    100062: chest 1
+    100064: chest 2
+    100066: chest 3
+    100068: chest 4
+    100070: chest 5
+    100072: chest 6
+    100074: chest 7
+    100076: chest 8
+    100078: chest 9
+    100080: Genesis2Male
+    100082: head
+    100084: head 1
+    100086: head 2
+    100088: head 3
+    100090: hip
+    100092: hip 1
+    100094: hip 10
+    100096: hip 11
+    100098: hip 12
+    100100: hip 13
+    100102: hip 14
+    100104: hip 15
+    100106: hip 16
+    100108: hip 17
+    100110: hip 18
+    100112: hip 2
+    100114: hip 3
+    100116: hip 4
+    100118: hip 5
+    100120: hip 6
+    100122: hip 7
+    100124: hip 8
+    100126: hip 9
+    100128: //RootNode
+    100130: lBigToe
+    100132: lBigToe 1
+    100134: lBigToe 2
+    100136: lBigToe 3
+    100138: lBigToe 4
+    100140: lBigToe 5
+    100142: lBigToe 6
+    100144: lBigToe 7
+    100146: lCarpal1
+    100148: lCarpal1 1
+    100150: lCarpal1 2
+    100152: lCarpal1 3
+    100154: lCarpal1 4
+    100156: lCarpal1 5
+    100158: lCarpal2
+    100160: lCarpal2 1
+    100162: lCarpal2 2
+    100164: lCarpal2 3
+    100166: lCarpal2 4
+    100168: lCarpal2 5
+    100170: lCollar
+    100172: lCollar 1
+    100174: lCollar 2
+    100176: lCollar 3
+    100178: lCollar 4
+    100180: lCollar 5
+    100182: lCollar 6
+    100184: lCollar 7
+    100186: lCollar 8
+    100188: lCollar 9
+    100190: lFoot
+    100192: lFoot 1
+    100194: lFoot 2
+    100196: lFoot 3
+    100198: lFoot 4
+    100200: lFoot 5
+    100202: lFoot 6
+    100204: lFoot 7
+    100206: lForeArm
+    100208: lForeArm 1
+    100210: lForeArm 2
+    100212: lForeArm 3
+    100214: lForeArm 4
+    100216: lForeArm 5
+    100218: lForeArm 6
+    100220: lForeArm 7
+    100222: lForeArm 8
+    100224: lHand
+    100226: lHand 1
+    100228: lHand 2
+    100230: lHand 3
+    100232: lHand 4
+    100234: lHand 5
+    100236: lowerJaw
+    100238: lowerJaw 1
+    100240: lowerJaw 2
+    100242: lowerJaw 3
+    100244: lPectoral
+    100246: lPectoral 1
+    100248: lPectoral 2
+    100250: lPectoral 3
+    100252: lShin
+    100254: lShin 1
+    100256: lShin 2
+    100258: lShin 3
+    100260: lShin 4
+    100262: lShin 5
+    100264: lShin 6
+    100266: lShin 7
+    100268: lShin 8
+    100270: lShldr
+    100272: lShldr 1
+    100274: lShldr 2
+    100276: lShldr 3
+    100278: lShldr 4
+    100280: lShldr 5
+    100282: lShldr 6
+    100284: lShldr 7
+    100286: lShldr 8
+    100288: lShldr 9
+    100290: lSmallToe1
+    100292: lSmallToe1 1
+    100294: lSmallToe1 2
+    100296: lSmallToe1 3
+    100298: lSmallToe1 4
+    100300: lSmallToe1 5
+    100302: lSmallToe1 6
+    100304: lSmallToe1 7
+    100306: lSmallToe2
+    100308: lSmallToe2 1
+    100310: lSmallToe2 2
+    100312: lSmallToe2 3
+    100314: lSmallToe2 4
+    100316: lSmallToe2 5
+    100318: lSmallToe2 6
+    100320: lSmallToe2 7
+    100322: lSmallToe3
+    100324: lSmallToe3 1
+    100326: lSmallToe3 2
+    100328: lSmallToe3 3
+    100330: lSmallToe3 4
+    100332: lSmallToe3 5
+    100334: lSmallToe3 6
+    100336: lSmallToe3 7
+    100338: lSmallToe4
+    100340: lSmallToe4 1
+    100342: lSmallToe4 2
+    100344: lSmallToe4 3
+    100346: lSmallToe4 4
+    100348: lSmallToe4 5
+    100350: lSmallToe4 6
+    100352: lSmallToe4 7
+    100354: lThigh
+    100356: lThigh 1
+    100358: lThigh 2
+    100360: lThigh 3
+    100362: lThigh 4
+    100364: lThigh 5
+    100366: lThigh 6
+    100368: lThigh 7
+    100370: lThigh 8
+    100372: lThigh 9
+    100374: lThumb1
+    100376: lThumb1 1
+    100378: lThumb1 2
+    100380: lThumb1 3
+    100382: lThumb1 4
+    100384: lThumb1 5
+    100386: lToe
+    100388: lToe 1
+    100390: lToe 2
+    100392: lToe 3
+    100394: lToe 4
+    100396: lToe 5
+    100398: lToe 6
+    100400: lToe 7
+    100402: neck
+    100404: neck 1
+    100406: neck 2
+    100408: neck 3
+    100410: pelvis
+    100412: pelvis 1
+    100414: pelvis 2
+    100416: pelvis 3
+    100418: pelvis 4
+    100420: pelvis 5
+    100422: pelvis 6
+    100424: pelvis 7
+    100426: pelvis 8
+    100428: pelvis 9
+    100430: rBigToe
+    100432: rBigToe 1
+    100434: rBigToe 2
+    100436: rBigToe 3
+    100438: rBigToe 4
+    100440: rBigToe 5
+    100442: rBigToe 6
+    100444: rBigToe 7
+    100446: rCarpal1
+    100448: rCarpal1 1
+    100450: rCarpal1 2
+    100452: rCarpal1 3
+    100454: rCarpal1 4
+    100456: rCarpal1 5
+    100458: rCarpal2
+    100460: rCarpal2 1
+    100462: rCarpal2 2
+    100464: rCarpal2 3
+    100466: rCarpal2 4
+    100468: rCarpal2 5
+    100470: rCollar
+    100472: rCollar 1
+    100474: rCollar 2
+    100476: rCollar 3
+    100478: rCollar 4
+    100480: rCollar 5
+    100482: rCollar 6
+    100484: rCollar 7
+    100486: rCollar 8
+    100488: rCollar 9
+    100490: rFoot
+    100492: rFoot 1
+    100494: rFoot 2
+    100496: rFoot 3
+    100498: rFoot 4
+    100500: rFoot 5
+    100502: rFoot 6
+    100504: rFoot 7
+    100506: rForeArm
+    100508: rForeArm 1
+    100510: rForeArm 2
+    100512: rForeArm 3
+    100514: rForeArm 4
+    100516: rForeArm 5
+    100518: rForeArm 6
+    100520: rForeArm 7
+    100522: rForeArm 8
+    100524: rHand
+    100526: rHand 1
+    100528: rHand 2
+    100530: rHand 3
+    100532: rHand 4
+    100534: rHand 5
+    100536: rPectoral
+    100538: rPectoral 1
+    100540: rPectoral 2
+    100542: rPectoral 3
+    100544: rShin
+    100546: rShin 1
+    100548: rShin 2
+    100550: rShin 3
+    100552: rShin 4
+    100554: rShin 5
+    100556: rShin 6
+    100558: rShin 7
+    100560: rShin 8
+    100562: rShldr
+    100564: rShldr 1
+    100566: rShldr 2
+    100568: rShldr 3
+    100570: rShldr 4
+    100572: rShldr 5
+    100574: rShldr 6
+    100576: rShldr 7
+    100578: rShldr 8
+    100580: rShldr 9
+    100582: rSmallToe1
+    100584: rSmallToe1 1
+    100586: rSmallToe1 2
+    100588: rSmallToe1 3
+    100590: rSmallToe1 4
+    100592: rSmallToe1 5
+    100594: rSmallToe1 6
+    100596: rSmallToe1 7
+    100598: rSmallToe2
+    100600: rSmallToe2 1
+    100602: rSmallToe2 2
+    100604: rSmallToe2 3
+    100606: rSmallToe2 4
+    100608: rSmallToe2 5
+    100610: rSmallToe2 6
+    100612: rSmallToe2 7
+    100614: rSmallToe3
+    100616: rSmallToe3 1
+    100618: rSmallToe3 2
+    100620: rSmallToe3 3
+    100622: rSmallToe3 4
+    100624: rSmallToe3 5
+    100626: rSmallToe3 6
+    100628: rSmallToe3 7
+    100630: rSmallToe4
+    100632: rSmallToe4 1
+    100634: rSmallToe4 2
+    100636: rSmallToe4 3
+    100638: rSmallToe4 4
+    100640: rSmallToe4 5
+    100642: rSmallToe4 6
+    100644: rSmallToe4 7
+    100646: rThigh
+    100648: rThigh 1
+    100650: rThigh 2
+    100652: rThigh 3
+    100654: rThigh 4
+    100656: rThigh 5
+    100658: rThigh 6
+    100660: rThigh 7
+    100662: rThigh 8
+    100664: rThigh 9
+    100666: rThumb1
+    100668: rThumb1 1
+    100670: rThumb1 2
+    100672: rThumb1 3
+    100674: rThumb1 4
+    100676: rThumb1 5
+    100678: rToe
+    100680: rToe 1
+    100682: rToe 2
+    100684: rToe 3
+    100686: rToe 4
+    100688: rToe 5
+    100690: rToe 6
+    100692: rToe 7
+    100694: valWolfBreastplate_16926
+    100696: valWolfBreastplate_16926.Shape_LOD0
+    100698: valWolfBreastplate_16926.Shape_LOD1
+    100700: valWolfBreastplate_16926.Shape_LOD2
+    100702: valWolfBreastplate_16926.Shape_LOD3
+    100704: valWolfHipmaille_716
+    100706: valWolfHipmaille_716.Shape_LOD0
+    100708: valWolfHipmaille_716.Shape_LOD1
+    100710: valWolfHipmaille_716.Shape_LOD2
+    100712: valWolfHipmaille_716.Shape_LOD3
+    100714: WolfLeftCouter
+    100716: WolfLeftCouter.Shape_LOD0
+    100718: WolfLeftCouter.Shape_LOD1
+    100720: WolfLeftCouter.Shape_LOD2
+    100722: WolfLeftCouter.Shape_LOD3
+    100724: WolfLeftGreaves
+    100726: WolfLeftGreaves.Shape_LOD0
+    100728: WolfLeftGreaves.Shape_LOD1
+    100730: WolfLeftGreaves.Shape_LOD2
+    100732: WolfLeftGreaves.Shape_LOD3
+    100734: WolfLeftKneecop
+    100736: WolfLeftKneecop.Shape_LOD0
+    100738: WolfLeftKneecop.Shape_LOD1
+    100740: WolfLeftKneecop.Shape_LOD2
+    100742: WolfLeftKneecop.Shape_LOD3
+    100744: WolfLeftPauldron
+    100746: WolfLeftPauldron.Shape_LOD0
+    100748: WolfLeftPauldron.Shape_LOD1
+    100750: WolfLeftPauldron.Shape_LOD2
+    100752: WolfLeftPauldron.Shape_LOD3
+    100754: WolfLeftRerebrace
+    100756: WolfLeftRerebrace.Shape_LOD0
+    100758: WolfLeftRerebrace.Shape_LOD1
+    100760: WolfLeftRerebrace.Shape_LOD2
+    100762: WolfLeftRerebrace.Shape_LOD3
+    100764: WolfLeftSabatons
+    100766: WolfLeftSabatons.Shape_LOD0
+    100768: WolfLeftSabatons.Shape_LOD1
+    100770: WolfLeftSabatons.Shape_LOD2
+    100772: WolfLeftSabatons.Shape_LOD3
+    100774: WolfLeftThighplates
+    100776: WolfLeftThighplates.Shape_LOD0
+    100778: WolfLeftThighplates.Shape_LOD1
+    100780: WolfLeftThighplates.Shape_LOD2
+    100782: WolfLeftThighplates.Shape_LOD3
+    100784: WolfLeftVambrace
+    100786: WolfLeftVambrace.Shape_LOD0
+    100788: WolfLeftVambrace.Shape_LOD1
+    100790: WolfLeftVambrace.Shape_LOD2
+    100792: WolfLeftVambrace.Shape_LOD3
+    100794: WolfNeckplate
+    100796: WolfNeckplate.Shape_LOD0
+    100798: WolfNeckplate.Shape_LOD1
+    100800: WolfNeckplate.Shape_LOD2
+    100802: WolfNeckplate.Shape_LOD3
+    100804: WolfRightCouter
+    100806: WolfRightCouter.Shape_LOD0
+    100808: WolfRightCouter.Shape_LOD1
+    100810: WolfRightCouter.Shape_LOD2
+    100812: WolfRightCouter.Shape_LOD3
+    100814: WolfRightGreaves
+    100816: WolfRightGreaves.Shape_LOD0
+    100818: WolfRightGreaves.Shape_LOD1
+    100820: WolfRightGreaves.Shape_LOD2
+    100822: WolfRightGreaves.Shape_LOD3
+    100824: WolfRightKneeCop
+    100826: WolfRightKneeCop.Shape_LOD0
+    100828: WolfRightKneeCop.Shape_LOD1
+    100830: WolfRightKneeCop.Shape_LOD2
+    100832: WolfRightKneeCop.Shape_LOD3
+    100834: WolfRightPauldron
+    100836: WolfRightPauldron.Shape_LOD0
+    100838: WolfRightPauldron.Shape_LOD1
+    100840: WolfRightPauldron.Shape_LOD2
+    100842: WolfRightPauldron.Shape_LOD3
+    100844: WolfRightRerebrace
+    100846: WolfRightRerebrace.Shape_LOD0
+    100848: WolfRightRerebrace.Shape_LOD1
+    100850: WolfRightRerebrace.Shape_LOD2
+    100852: WolfRightRerebrace.Shape_LOD3
+    100854: WolfRightSabatons
+    100856: WolfRightSabatons.Shape_LOD0
+    100858: WolfRightSabatons.Shape_LOD1
+    100860: WolfRightSabatons.Shape_LOD2
+    100862: WolfRightSabatons.Shape_LOD3
+    100864: WolfRightThighplates
+    100866: WolfRightThighplates.Shape_LOD0
+    100868: WolfRightThighplates.Shape_LOD1
+    100870: WolfRightThighplates.Shape_LOD2
+    100872: WolfRightThighplates.Shape_LOD3
+    100874: WolfRightVambraces
+    100876: WolfRightVambraces.Shape_LOD0
+    100878: WolfRightVambraces.Shape_LOD1
+    100880: WolfRightVambraces.Shape_LOD2
+    100882: WolfRightVambraces.Shape_LOD3
+    100884: Genesis 2 Male
+    100886: valWolfBreastplate
+    100888: valWolfHipmaille
+    400000: abdomen
+    400002: abdomen 1
+    400004: abdomen 10
+    400006: abdomen 11
+    400008: abdomen 12
+    400010: abdomen 13
+    400012: abdomen 14
+    400014: abdomen 15
+    400016: abdomen 16
+    400018: abdomen 17
+    400020: abdomen 18
+    400022: abdomen 2
+    400024: abdomen 3
+    400026: abdomen 4
+    400028: abdomen 5
+    400030: abdomen 6
+    400032: abdomen 7
+    400034: abdomen 8
+    400036: abdomen 9
+    400038: abdomen2
+    400040: abdomen2 1
+    400042: abdomen2 10
+    400044: abdomen2 2
+    400046: abdomen2 3
+    400048: abdomen2 4
+    400050: abdomen2 5
+    400052: abdomen2 6
+    400054: abdomen2 7
+    400056: abdomen2 8
+    400058: abdomen2 9
+    400060: chest
+    400062: chest 1
+    400064: chest 2
+    400066: chest 3
+    400068: chest 4
+    400070: chest 5
+    400072: chest 6
+    400074: chest 7
+    400076: chest 8
+    400078: chest 9
+    400080: Genesis2Male
+    400082: head
+    400084: head 1
+    400086: head 2
+    400088: head 3
+    400090: hip
+    400092: hip 1
+    400094: hip 10
+    400096: hip 11
+    400098: hip 12
+    400100: hip 13
+    400102: hip 14
+    400104: hip 15
+    400106: hip 16
+    400108: hip 17
+    400110: hip 18
+    400112: hip 2
+    400114: hip 3
+    400116: hip 4
+    400118: hip 5
+    400120: hip 6
+    400122: hip 7
+    400124: hip 8
+    400126: hip 9
+    400128: //RootNode
+    400130: lBigToe
+    400132: lBigToe 1
+    400134: lBigToe 2
+    400136: lBigToe 3
+    400138: lBigToe 4
+    400140: lBigToe 5
+    400142: lBigToe 6
+    400144: lBigToe 7
+    400146: lCarpal1
+    400148: lCarpal1 1
+    400150: lCarpal1 2
+    400152: lCarpal1 3
+    400154: lCarpal1 4
+    400156: lCarpal1 5
+    400158: lCarpal2
+    400160: lCarpal2 1
+    400162: lCarpal2 2
+    400164: lCarpal2 3
+    400166: lCarpal2 4
+    400168: lCarpal2 5
+    400170: lCollar
+    400172: lCollar 1
+    400174: lCollar 2
+    400176: lCollar 3
+    400178: lCollar 4
+    400180: lCollar 5
+    400182: lCollar 6
+    400184: lCollar 7
+    400186: lCollar 8
+    400188: lCollar 9
+    400190: lFoot
+    400192: lFoot 1
+    400194: lFoot 2
+    400196: lFoot 3
+    400198: lFoot 4
+    400200: lFoot 5
+    400202: lFoot 6
+    400204: lFoot 7
+    400206: lForeArm
+    400208: lForeArm 1
+    400210: lForeArm 2
+    400212: lForeArm 3
+    400214: lForeArm 4
+    400216: lForeArm 5
+    400218: lForeArm 6
+    400220: lForeArm 7
+    400222: lForeArm 8
+    400224: lHand
+    400226: lHand 1
+    400228: lHand 2
+    400230: lHand 3
+    400232: lHand 4
+    400234: lHand 5
+    400236: lowerJaw
+    400238: lowerJaw 1
+    400240: lowerJaw 2
+    400242: lowerJaw 3
+    400244: lPectoral
+    400246: lPectoral 1
+    400248: lPectoral 2
+    400250: lPectoral 3
+    400252: lShin
+    400254: lShin 1
+    400256: lShin 2
+    400258: lShin 3
+    400260: lShin 4
+    400262: lShin 5
+    400264: lShin 6
+    400266: lShin 7
+    400268: lShin 8
+    400270: lShldr
+    400272: lShldr 1
+    400274: lShldr 2
+    400276: lShldr 3
+    400278: lShldr 4
+    400280: lShldr 5
+    400282: lShldr 6
+    400284: lShldr 7
+    400286: lShldr 8
+    400288: lShldr 9
+    400290: lSmallToe1
+    400292: lSmallToe1 1
+    400294: lSmallToe1 2
+    400296: lSmallToe1 3
+    400298: lSmallToe1 4
+    400300: lSmallToe1 5
+    400302: lSmallToe1 6
+    400304: lSmallToe1 7
+    400306: lSmallToe2
+    400308: lSmallToe2 1
+    400310: lSmallToe2 2
+    400312: lSmallToe2 3
+    400314: lSmallToe2 4
+    400316: lSmallToe2 5
+    400318: lSmallToe2 6
+    400320: lSmallToe2 7
+    400322: lSmallToe3
+    400324: lSmallToe3 1
+    400326: lSmallToe3 2
+    400328: lSmallToe3 3
+    400330: lSmallToe3 4
+    400332: lSmallToe3 5
+    400334: lSmallToe3 6
+    400336: lSmallToe3 7
+    400338: lSmallToe4
+    400340: lSmallToe4 1
+    400342: lSmallToe4 2
+    400344: lSmallToe4 3
+    400346: lSmallToe4 4
+    400348: lSmallToe4 5
+    400350: lSmallToe4 6
+    400352: lSmallToe4 7
+    400354: lThigh
+    400356: lThigh 1
+    400358: lThigh 2
+    400360: lThigh 3
+    400362: lThigh 4
+    400364: lThigh 5
+    400366: lThigh 6
+    400368: lThigh 7
+    400370: lThigh 8
+    400372: lThigh 9
+    400374: lThumb1
+    400376: lThumb1 1
+    400378: lThumb1 2
+    400380: lThumb1 3
+    400382: lThumb1 4
+    400384: lThumb1 5
+    400386: lToe
+    400388: lToe 1
+    400390: lToe 2
+    400392: lToe 3
+    400394: lToe 4
+    400396: lToe 5
+    400398: lToe 6
+    400400: lToe 7
+    400402: neck
+    400404: neck 1
+    400406: neck 2
+    400408: neck 3
+    400410: pelvis
+    400412: pelvis 1
+    400414: pelvis 2
+    400416: pelvis 3
+    400418: pelvis 4
+    400420: pelvis 5
+    400422: pelvis 6
+    400424: pelvis 7
+    400426: pelvis 8
+    400428: pelvis 9
+    400430: rBigToe
+    400432: rBigToe 1
+    400434: rBigToe 2
+    400436: rBigToe 3
+    400438: rBigToe 4
+    400440: rBigToe 5
+    400442: rBigToe 6
+    400444: rBigToe 7
+    400446: rCarpal1
+    400448: rCarpal1 1
+    400450: rCarpal1 2
+    400452: rCarpal1 3
+    400454: rCarpal1 4
+    400456: rCarpal1 5
+    400458: rCarpal2
+    400460: rCarpal2 1
+    400462: rCarpal2 2
+    400464: rCarpal2 3
+    400466: rCarpal2 4
+    400468: rCarpal2 5
+    400470: rCollar
+    400472: rCollar 1
+    400474: rCollar 2
+    400476: rCollar 3
+    400478: rCollar 4
+    400480: rCollar 5
+    400482: rCollar 6
+    400484: rCollar 7
+    400486: rCollar 8
+    400488: rCollar 9
+    400490: rFoot
+    400492: rFoot 1
+    400494: rFoot 2
+    400496: rFoot 3
+    400498: rFoot 4
+    400500: rFoot 5
+    400502: rFoot 6
+    400504: rFoot 7
+    400506: rForeArm
+    400508: rForeArm 1
+    400510: rForeArm 2
+    400512: rForeArm 3
+    400514: rForeArm 4
+    400516: rForeArm 5
+    400518: rForeArm 6
+    400520: rForeArm 7
+    400522: rForeArm 8
+    400524: rHand
+    400526: rHand 1
+    400528: rHand 2
+    400530: rHand 3
+    400532: rHand 4
+    400534: rHand 5
+    400536: rPectoral
+    400538: rPectoral 1
+    400540: rPectoral 2
+    400542: rPectoral 3
+    400544: rShin
+    400546: rShin 1
+    400548: rShin 2
+    400550: rShin 3
+    400552: rShin 4
+    400554: rShin 5
+    400556: rShin 6
+    400558: rShin 7
+    400560: rShin 8
+    400562: rShldr
+    400564: rShldr 1
+    400566: rShldr 2
+    400568: rShldr 3
+    400570: rShldr 4
+    400572: rShldr 5
+    400574: rShldr 6
+    400576: rShldr 7
+    400578: rShldr 8
+    400580: rShldr 9
+    400582: rSmallToe1
+    400584: rSmallToe1 1
+    400586: rSmallToe1 2
+    400588: rSmallToe1 3
+    400590: rSmallToe1 4
+    400592: rSmallToe1 5
+    400594: rSmallToe1 6
+    400596: rSmallToe1 7
+    400598: rSmallToe2
+    400600: rSmallToe2 1
+    400602: rSmallToe2 2
+    400604: rSmallToe2 3
+    400606: rSmallToe2 4
+    400608: rSmallToe2 5
+    400610: rSmallToe2 6
+    400612: rSmallToe2 7
+    400614: rSmallToe3
+    400616: rSmallToe3 1
+    400618: rSmallToe3 2
+    400620: rSmallToe3 3
+    400622: rSmallToe3 4
+    400624: rSmallToe3 5
+    400626: rSmallToe3 6
+    400628: rSmallToe3 7
+    400630: rSmallToe4
+    400632: rSmallToe4 1
+    400634: rSmallToe4 2
+    400636: rSmallToe4 3
+    400638: rSmallToe4 4
+    400640: rSmallToe4 5
+    400642: rSmallToe4 6
+    400644: rSmallToe4 7
+    400646: rThigh
+    400648: rThigh 1
+    400650: rThigh 2
+    400652: rThigh 3
+    400654: rThigh 4
+    400656: rThigh 5
+    400658: rThigh 6
+    400660: rThigh 7
+    400662: rThigh 8
+    400664: rThigh 9
+    400666: rThumb1
+    400668: rThumb1 1
+    400670: rThumb1 2
+    400672: rThumb1 3
+    400674: rThumb1 4
+    400676: rThumb1 5
+    400678: rToe
+    400680: rToe 1
+    400682: rToe 2
+    400684: rToe 3
+    400686: rToe 4
+    400688: rToe 5
+    400690: rToe 6
+    400692: rToe 7
+    400694: valWolfBreastplate_16926
+    400696: valWolfBreastplate_16926.Shape_LOD0
+    400698: valWolfBreastplate_16926.Shape_LOD1
+    400700: valWolfBreastplate_16926.Shape_LOD2
+    400702: valWolfBreastplate_16926.Shape_LOD3
+    400704: valWolfHipmaille_716
+    400706: valWolfHipmaille_716.Shape_LOD0
+    400708: valWolfHipmaille_716.Shape_LOD1
+    400710: valWolfHipmaille_716.Shape_LOD2
+    400712: valWolfHipmaille_716.Shape_LOD3
+    400714: WolfLeftCouter
+    400716: WolfLeftCouter.Shape_LOD0
+    400718: WolfLeftCouter.Shape_LOD1
+    400720: WolfLeftCouter.Shape_LOD2
+    400722: WolfLeftCouter.Shape_LOD3
+    400724: WolfLeftGreaves
+    400726: WolfLeftGreaves.Shape_LOD0
+    400728: WolfLeftGreaves.Shape_LOD1
+    400730: WolfLeftGreaves.Shape_LOD2
+    400732: WolfLeftGreaves.Shape_LOD3
+    400734: WolfLeftKneecop
+    400736: WolfLeftKneecop.Shape_LOD0
+    400738: WolfLeftKneecop.Shape_LOD1
+    400740: WolfLeftKneecop.Shape_LOD2
+    400742: WolfLeftKneecop.Shape_LOD3
+    400744: WolfLeftPauldron
+    400746: WolfLeftPauldron.Shape_LOD0
+    400748: WolfLeftPauldron.Shape_LOD1
+    400750: WolfLeftPauldron.Shape_LOD2
+    400752: WolfLeftPauldron.Shape_LOD3
+    400754: WolfLeftRerebrace
+    400756: WolfLeftRerebrace.Shape_LOD0
+    400758: WolfLeftRerebrace.Shape_LOD1
+    400760: WolfLeftRerebrace.Shape_LOD2
+    400762: WolfLeftRerebrace.Shape_LOD3
+    400764: WolfLeftSabatons
+    400766: WolfLeftSabatons.Shape_LOD0
+    400768: WolfLeftSabatons.Shape_LOD1
+    400770: WolfLeftSabatons.Shape_LOD2
+    400772: WolfLeftSabatons.Shape_LOD3
+    400774: WolfLeftThighplates
+    400776: WolfLeftThighplates.Shape_LOD0
+    400778: WolfLeftThighplates.Shape_LOD1
+    400780: WolfLeftThighplates.Shape_LOD2
+    400782: WolfLeftThighplates.Shape_LOD3
+    400784: WolfLeftVambrace
+    400786: WolfLeftVambrace.Shape_LOD0
+    400788: WolfLeftVambrace.Shape_LOD1
+    400790: WolfLeftVambrace.Shape_LOD2
+    400792: WolfLeftVambrace.Shape_LOD3
+    400794: WolfNeckplate
+    400796: WolfNeckplate.Shape_LOD0
+    400798: WolfNeckplate.Shape_LOD1
+    400800: WolfNeckplate.Shape_LOD2
+    400802: WolfNeckplate.Shape_LOD3
+    400804: WolfRightCouter
+    400806: WolfRightCouter.Shape_LOD0
+    400808: WolfRightCouter.Shape_LOD1
+    400810: WolfRightCouter.Shape_LOD2
+    400812: WolfRightCouter.Shape_LOD3
+    400814: WolfRightGreaves
+    400816: WolfRightGreaves.Shape_LOD0
+    400818: WolfRightGreaves.Shape_LOD1
+    400820: WolfRightGreaves.Shape_LOD2
+    400822: WolfRightGreaves.Shape_LOD3
+    400824: WolfRightKneeCop
+    400826: WolfRightKneeCop.Shape_LOD0
+    400828: WolfRightKneeCop.Shape_LOD1
+    400830: WolfRightKneeCop.Shape_LOD2
+    400832: WolfRightKneeCop.Shape_LOD3
+    400834: WolfRightPauldron
+    400836: WolfRightPauldron.Shape_LOD0
+    400838: WolfRightPauldron.Shape_LOD1
+    400840: WolfRightPauldron.Shape_LOD2
+    400842: WolfRightPauldron.Shape_LOD3
+    400844: WolfRightRerebrace
+    400846: WolfRightRerebrace.Shape_LOD0
+    400848: WolfRightRerebrace.Shape_LOD1
+    400850: WolfRightRerebrace.Shape_LOD2
+    400852: WolfRightRerebrace.Shape_LOD3
+    400854: WolfRightSabatons
+    400856: WolfRightSabatons.Shape_LOD0
+    400858: WolfRightSabatons.Shape_LOD1
+    400860: WolfRightSabatons.Shape_LOD2
+    400862: WolfRightSabatons.Shape_LOD3
+    400864: WolfRightThighplates
+    400866: WolfRightThighplates.Shape_LOD0
+    400868: WolfRightThighplates.Shape_LOD1
+    400870: WolfRightThighplates.Shape_LOD2
+    400872: WolfRightThighplates.Shape_LOD3
+    400874: WolfRightVambraces
+    400876: WolfRightVambraces.Shape_LOD0
+    400878: WolfRightVambraces.Shape_LOD1
+    400880: WolfRightVambraces.Shape_LOD2
+    400882: WolfRightVambraces.Shape_LOD3
+    400884: Genesis 2 Male
+    400886: valWolfBreastplate
+    400888: valWolfHipmaille
+    4300000: WolfLeftRerebrace.Shape_LOD0
+    4300002: WolfLeftRerebrace.Shape_LOD1
+    4300004: WolfLeftRerebrace.Shape_LOD2
+    4300006: WolfLeftRerebrace.Shape_LOD3
+    4300008: WolfLeftVambrace.Shape_LOD0
+    4300010: WolfLeftVambrace.Shape_LOD1
+    4300012: WolfLeftVambrace.Shape_LOD2
+    4300014: WolfLeftVambrace.Shape_LOD3
+    4300016: WolfLeftCouter.Shape_LOD0
+    4300018: WolfLeftCouter.Shape_LOD1
+    4300020: WolfLeftCouter.Shape_LOD2
+    4300022: WolfLeftCouter.Shape_LOD3
+    4300024: WolfNeckplate.Shape_LOD0
+    4300026: WolfNeckplate.Shape_LOD1
+    4300028: WolfNeckplate.Shape_LOD2
+    4300030: WolfNeckplate.Shape_LOD3
+    4300032: valWolfBreastplate_16926.Shape_LOD0
+    4300034: valWolfBreastplate_16926.Shape_LOD1
+    4300036: valWolfBreastplate_16926.Shape_LOD2
+    4300038: valWolfBreastplate_16926.Shape_LOD3
+    4300040: valWolfHipmaille_716.Shape_LOD0
+    4300042: valWolfHipmaille_716.Shape_LOD1
+    4300044: valWolfHipmaille_716.Shape_LOD2
+    4300046: valWolfHipmaille_716.Shape_LOD3
+    4300048: WolfRightPauldron.Shape_LOD0
+    4300050: WolfRightPauldron.Shape_LOD1
+    4300052: WolfRightPauldron.Shape_LOD2
+    4300054: WolfRightPauldron.Shape_LOD3
+    4300056: WolfRightRerebrace.Shape_LOD0
+    4300058: WolfRightRerebrace.Shape_LOD1
+    4300060: WolfRightRerebrace.Shape_LOD2
+    4300062: WolfRightRerebrace.Shape_LOD3
+    4300064: WolfRightCouter.Shape_LOD0
+    4300066: WolfRightCouter.Shape_LOD1
+    4300068: WolfRightCouter.Shape_LOD2
+    4300070: WolfRightCouter.Shape_LOD3
+    4300072: WolfRightVambraces.Shape_LOD0
+    4300074: WolfRightVambraces.Shape_LOD1
+    4300076: WolfRightVambraces.Shape_LOD2
+    4300078: WolfRightVambraces.Shape_LOD3
+    4300080: WolfRightGreaves.Shape_LOD0
+    4300082: WolfRightGreaves.Shape_LOD1
+    4300084: WolfRightGreaves.Shape_LOD2
+    4300086: WolfRightGreaves.Shape_LOD3
+    4300088: WolfRightSabatons.Shape_LOD0
+    4300090: WolfRightSabatons.Shape_LOD1
+    4300092: WolfRightSabatons.Shape_LOD2
+    4300094: WolfRightSabatons.Shape_LOD3
+    4300096: WolfRightThighplates.Shape_LOD0
+    4300098: WolfRightThighplates.Shape_LOD1
+    4300100: WolfRightThighplates.Shape_LOD2
+    4300102: WolfRightThighplates.Shape_LOD3
+    4300104: WolfRightKneeCop.Shape_LOD0
+    4300106: WolfRightKneeCop.Shape_LOD1
+    4300108: WolfRightKneeCop.Shape_LOD2
+    4300110: WolfRightKneeCop.Shape_LOD3
+    4300112: WolfLeftPauldron.Shape_LOD0
+    4300114: WolfLeftPauldron.Shape_LOD1
+    4300116: WolfLeftPauldron.Shape_LOD2
+    4300118: WolfLeftPauldron.Shape_LOD3
+    4300120: WolfLeftSabatons.Shape_LOD0
+    4300122: WolfLeftSabatons.Shape_LOD1
+    4300124: WolfLeftSabatons.Shape_LOD2
+    4300126: WolfLeftSabatons.Shape_LOD3
+    4300128: WolfLeftGreaves.Shape_LOD0
+    4300130: WolfLeftGreaves.Shape_LOD1
+    4300132: WolfLeftGreaves.Shape_LOD2
+    4300134: WolfLeftGreaves.Shape_LOD3
+    4300136: WolfLeftKneecop.Shape_LOD0
+    4300138: WolfLeftKneecop.Shape_LOD1
+    4300140: WolfLeftKneecop.Shape_LOD2
+    4300142: WolfLeftKneecop.Shape_LOD3
+    4300144: WolfLeftThighplates.Shape_LOD0
+    4300146: WolfLeftThighplates.Shape_LOD1
+    4300148: WolfLeftThighplates.Shape_LOD2
+    4300150: WolfLeftThighplates.Shape_LOD3
+    9500000: //RootNode
+    11400000: valWolfBreastplate
+    11400002: valWolfBreastplate
+    11400004: valWolfBreastplate_16926.Shape_LOD0
+    11400006: valWolfBreastplate_16926.Shape_LOD1
+    11400008: valWolfBreastplate_16926.Shape_LOD2
+    11400010: valWolfBreastplate_16926.Shape_LOD3
+    11400012: valWolfHipmaille
+    11400014: valWolfHipmaille
+    11400016: valWolfHipmaille_716.Shape_LOD0
+    11400018: valWolfHipmaille_716.Shape_LOD1
+    11400020: valWolfHipmaille_716.Shape_LOD2
+    11400022: valWolfHipmaille_716.Shape_LOD3
+    11400024: WolfLeftCouter
+    11400026: WolfLeftCouter
+    11400028: WolfLeftCouter.Shape_LOD0
+    11400030: WolfLeftCouter.Shape_LOD1
+    11400032: WolfLeftCouter.Shape_LOD2
+    11400034: WolfLeftCouter.Shape_LOD3
+    11400036: WolfLeftGreaves
+    11400038: WolfLeftGreaves
+    11400040: WolfLeftGreaves.Shape_LOD0
+    11400042: WolfLeftGreaves.Shape_LOD1
+    11400044: WolfLeftGreaves.Shape_LOD2
+    11400046: WolfLeftGreaves.Shape_LOD3
+    11400048: WolfLeftKneecop
+    11400050: WolfLeftKneecop
+    11400052: WolfLeftKneecop.Shape_LOD0
+    11400054: WolfLeftKneecop.Shape_LOD1
+    11400056: WolfLeftKneecop.Shape_LOD2
+    11400058: WolfLeftKneecop.Shape_LOD3
+    11400060: WolfLeftPauldron
+    11400062: WolfLeftPauldron
+    11400064: WolfLeftPauldron.Shape_LOD0
+    11400066: WolfLeftPauldron.Shape_LOD1
+    11400068: WolfLeftPauldron.Shape_LOD2
+    11400070: WolfLeftPauldron.Shape_LOD3
+    11400072: WolfLeftRerebrace
+    11400074: WolfLeftRerebrace
+    11400076: WolfLeftRerebrace.Shape_LOD0
+    11400078: WolfLeftRerebrace.Shape_LOD1
+    11400080: WolfLeftRerebrace.Shape_LOD2
+    11400082: WolfLeftRerebrace.Shape_LOD3
+    11400084: WolfLeftSabatons
+    11400086: WolfLeftSabatons
+    11400088: WolfLeftSabatons.Shape_LOD0
+    11400090: WolfLeftSabatons.Shape_LOD1
+    11400092: WolfLeftSabatons.Shape_LOD2
+    11400094: WolfLeftSabatons.Shape_LOD3
+    11400096: WolfLeftThighplates
+    11400098: WolfLeftThighplates
+    11400100: WolfLeftThighplates.Shape_LOD0
+    11400102: WolfLeftThighplates.Shape_LOD1
+    11400104: WolfLeftThighplates.Shape_LOD2
+    11400106: WolfLeftThighplates.Shape_LOD3
+    11400108: WolfLeftVambrace
+    11400110: WolfLeftVambrace
+    11400112: WolfLeftVambrace.Shape_LOD0
+    11400114: WolfLeftVambrace.Shape_LOD1
+    11400116: WolfLeftVambrace.Shape_LOD2
+    11400118: WolfLeftVambrace.Shape_LOD3
+    11400120: WolfNeckplate
+    11400122: WolfNeckplate
+    11400124: WolfNeckplate.Shape_LOD0
+    11400126: WolfNeckplate.Shape_LOD1
+    11400128: WolfNeckplate.Shape_LOD2
+    11400130: WolfNeckplate.Shape_LOD3
+    11400132: WolfRightCouter
+    11400134: WolfRightCouter
+    11400136: WolfRightCouter.Shape_LOD0
+    11400138: WolfRightCouter.Shape_LOD1
+    11400140: WolfRightCouter.Shape_LOD2
+    11400142: WolfRightCouter.Shape_LOD3
+    11400144: WolfRightGreaves
+    11400146: WolfRightGreaves
+    11400148: WolfRightGreaves.Shape_LOD0
+    11400150: WolfRightGreaves.Shape_LOD1
+    11400152: WolfRightGreaves.Shape_LOD2
+    11400154: WolfRightGreaves.Shape_LOD3
+    11400156: WolfRightKneeCop
+    11400158: WolfRightKneeCop
+    11400160: WolfRightKneeCop.Shape_LOD0
+    11400162: WolfRightKneeCop.Shape_LOD1
+    11400164: WolfRightKneeCop.Shape_LOD2
+    11400166: WolfRightKneeCop.Shape_LOD3
+    11400168: WolfRightPauldron
+    11400170: WolfRightPauldron
+    11400172: WolfRightPauldron.Shape_LOD0
+    11400174: WolfRightPauldron.Shape_LOD1
+    11400176: WolfRightPauldron.Shape_LOD2
+    11400178: WolfRightPauldron.Shape_LOD3
+    11400180: WolfRightRerebrace
+    11400182: WolfRightRerebrace
+    11400184: WolfRightRerebrace.Shape_LOD0
+    11400186: WolfRightRerebrace.Shape_LOD1
+    11400188: WolfRightRerebrace.Shape_LOD2
+    11400190: WolfRightRerebrace.Shape_LOD3
+    11400192: WolfRightSabatons
+    11400194: WolfRightSabatons
+    11400196: WolfRightSabatons.Shape_LOD0
+    11400198: WolfRightSabatons.Shape_LOD1
+    11400200: WolfRightSabatons.Shape_LOD2
+    11400202: WolfRightSabatons.Shape_LOD3
+    11400204: WolfRightThighplates
+    11400206: WolfRightThighplates
+    11400208: WolfRightThighplates.Shape_LOD0
+    11400210: WolfRightThighplates.Shape_LOD1
+    11400212: WolfRightThighplates.Shape_LOD2
+    11400214: WolfRightThighplates.Shape_LOD3
+    11400216: WolfRightVambraces
+    11400218: WolfRightVambraces
+    11400220: WolfRightVambraces.Shape_LOD0
+    11400222: WolfRightVambraces.Shape_LOD1
+    11400224: WolfRightVambraces.Shape_LOD2
+    11400226: WolfRightVambraces.Shape_LOD3
+    13700000: valWolfBreastplate_16926.Shape_LOD0
+    13700002: valWolfBreastplate_16926.Shape_LOD1
+    13700004: valWolfBreastplate_16926.Shape_LOD2
+    13700006: valWolfBreastplate_16926.Shape_LOD3
+    13700008: valWolfHipmaille_716.Shape_LOD0
+    13700010: valWolfHipmaille_716.Shape_LOD1
+    13700012: valWolfHipmaille_716.Shape_LOD2
+    13700014: valWolfHipmaille_716.Shape_LOD3
+    13700016: WolfLeftCouter.Shape_LOD0
+    13700018: WolfLeftCouter.Shape_LOD1
+    13700020: WolfLeftCouter.Shape_LOD2
+    13700022: WolfLeftCouter.Shape_LOD3
+    13700024: WolfLeftGreaves.Shape_LOD0
+    13700026: WolfLeftGreaves.Shape_LOD1
+    13700028: WolfLeftGreaves.Shape_LOD2
+    13700030: WolfLeftGreaves.Shape_LOD3
+    13700032: WolfLeftKneecop.Shape_LOD0
+    13700034: WolfLeftKneecop.Shape_LOD1
+    13700036: WolfLeftKneecop.Shape_LOD2
+    13700038: WolfLeftKneecop.Shape_LOD3
+    13700040: WolfLeftPauldron.Shape_LOD0
+    13700042: WolfLeftPauldron.Shape_LOD1
+    13700044: WolfLeftPauldron.Shape_LOD2
+    13700046: WolfLeftPauldron.Shape_LOD3
+    13700048: WolfLeftRerebrace.Shape_LOD0
+    13700050: WolfLeftRerebrace.Shape_LOD1
+    13700052: WolfLeftRerebrace.Shape_LOD2
+    13700054: WolfLeftRerebrace.Shape_LOD3
+    13700056: WolfLeftSabatons.Shape_LOD0
+    13700058: WolfLeftSabatons.Shape_LOD1
+    13700060: WolfLeftSabatons.Shape_LOD2
+    13700062: WolfLeftSabatons.Shape_LOD3
+    13700064: WolfLeftThighplates.Shape_LOD0
+    13700066: WolfLeftThighplates.Shape_LOD1
+    13700068: WolfLeftThighplates.Shape_LOD2
+    13700070: WolfLeftThighplates.Shape_LOD3
+    13700072: WolfLeftVambrace.Shape_LOD0
+    13700074: WolfLeftVambrace.Shape_LOD1
+    13700076: WolfLeftVambrace.Shape_LOD2
+    13700078: WolfLeftVambrace.Shape_LOD3
+    13700080: WolfNeckplate.Shape_LOD0
+    13700082: WolfNeckplate.Shape_LOD1
+    13700084: WolfNeckplate.Shape_LOD2
+    13700086: WolfNeckplate.Shape_LOD3
+    13700088: WolfRightCouter.Shape_LOD0
+    13700090: WolfRightCouter.Shape_LOD1
+    13700092: WolfRightCouter.Shape_LOD2
+    13700094: WolfRightCouter.Shape_LOD3
+    13700096: WolfRightGreaves.Shape_LOD0
+    13700098: WolfRightGreaves.Shape_LOD1
+    13700100: WolfRightGreaves.Shape_LOD2
+    13700102: WolfRightGreaves.Shape_LOD3
+    13700104: WolfRightKneeCop.Shape_LOD0
+    13700106: WolfRightKneeCop.Shape_LOD1
+    13700108: WolfRightKneeCop.Shape_LOD2
+    13700110: WolfRightKneeCop.Shape_LOD3
+    13700112: WolfRightPauldron.Shape_LOD0
+    13700114: WolfRightPauldron.Shape_LOD1
+    13700116: WolfRightPauldron.Shape_LOD2
+    13700118: WolfRightPauldron.Shape_LOD3
+    13700120: WolfRightRerebrace.Shape_LOD0
+    13700122: WolfRightRerebrace.Shape_LOD1
+    13700124: WolfRightRerebrace.Shape_LOD2
+    13700126: WolfRightRerebrace.Shape_LOD3
+    13700128: WolfRightSabatons.Shape_LOD0
+    13700130: WolfRightSabatons.Shape_LOD1
+    13700132: WolfRightSabatons.Shape_LOD2
+    13700134: WolfRightSabatons.Shape_LOD3
+    13700136: WolfRightThighplates.Shape_LOD0
+    13700138: WolfRightThighplates.Shape_LOD1
+    13700140: WolfRightThighplates.Shape_LOD2
+    13700142: WolfRightThighplates.Shape_LOD3
+    13700144: WolfRightVambraces.Shape_LOD0
+    13700146: WolfRightVambraces.Shape_LOD1
+    13700148: WolfRightVambraces.Shape_LOD2
+    13700150: WolfRightVambraces.Shape_LOD3
+    20500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages:
+    - 0.25
+    - 0.125
+    - 0.0625
+    - 0.01
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

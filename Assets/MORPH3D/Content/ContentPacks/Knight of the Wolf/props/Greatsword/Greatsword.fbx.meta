@@ -1,0 +1,129 @@
+fileFormatVersion: 2
+guid: d1f263375fcedd249abd23c910964967
+timeCreated: 1446235131
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: abdomen
+    100002: abdomen2
+    100004: chest
+    100006: Genesis2Male
+    100008: //RootNode
+    100010: GrtTyrSword.Shape_LOD0
+    100012: GrtTyrSword.Shape_LOD1
+    100014: GrtTyrSword.Shape_LOD2
+    100016: hip
+    100018: rCollar
+    100020: rForeArm
+    100022: rHand
+    100024: rHandAttachmentPointL
+    100026: rHandAttachmentPointR
+    100028: rShldr
+    100030: TyroleanGreatSword
+    100032: Genesis 2 Male
+    400000: abdomen
+    400002: abdomen2
+    400004: chest
+    400006: Genesis2Male
+    400008: //RootNode
+    400010: GrtTyrSword.Shape_LOD0
+    400012: GrtTyrSword.Shape_LOD1
+    400014: GrtTyrSword.Shape_LOD2
+    400016: hip
+    400018: rCollar
+    400020: rForeArm
+    400022: rHand
+    400024: rHandAttachmentPointL
+    400026: rHandAttachmentPointR
+    400028: rShldr
+    400030: TyroleanGreatSword
+    400032: Genesis 2 Male
+    2300000: GrtTyrSword.Shape_LOD0
+    2300002: GrtTyrSword.Shape_LOD1
+    2300004: GrtTyrSword.Shape_LOD2
+    3300000: GrtTyrSword.Shape_LOD0
+    3300002: GrtTyrSword.Shape_LOD1
+    3300004: GrtTyrSword.Shape_LOD2
+    4300000: GrtTyrSword.Shape_LOD0
+    4300002: GrtTyrSword.Shape_LOD1
+    4300004: GrtTyrSword.Shape_LOD2
+    7400000: Take 001
+    9500000: //RootNode
+    11400000: GrtTyrSword.Shape_LOD0
+    11400002: GrtTyrSword.Shape_LOD1
+    11400004: GrtTyrSword.Shape_LOD2
+    11400006: hip
+    11400008: rHandAttachmentPointL
+    11400010: rHandAttachmentPointL
+    11400012: rHandAttachmentPointR
+    11400014: rHandAttachmentPointR
+    11400016: TyroleanGreatSword
+    11400018: TyroleanGreatSword
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages:
+    - 0.25
+    - 0.125
+    - 0.01
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
