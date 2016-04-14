@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Name: M3D_BlendshapesNames
   m_EditorClassIdentifier: 
   namesTable:
+  - _dazName: Genesis2Male__PBMAdamsApple
+    _ID: PBMAdamsApple
+    Label: Adams Apple
   - _dazName: Genesis2Female__PHMAfraid
     _ID: PHMAfraid
     Label: Afraid
@@ -24,6 +27,9 @@ MonoBehaviour:
   - _dazName: Genesis2Female__Basic_Weight1
     _ID: Basic_Weight1
     Label: Basic _ Weight 1
+  - _dazName: Genesis2Male__FHMBat
+    _ID: FHMBat
+    Label: Bat
   - _dazName: Genesis2Female__PBMBelly
     _ID: PBMBelly
     Label: Belly
@@ -54,9 +60,15 @@ MonoBehaviour:
   - _dazName: Genesis2Female__PHMConfused
     _ID: PHMConfused
     Label: Confused
+  - _dazName: Genesis2Male__PHMCraniumSlope
+    _ID: PHMCraniumSlope
+    Label: Cranium Slope
   - _dazName: Genesis2Female__PHMCrowsFeet
     _ID: PHMCrowsFeet
     Label: Crows Feet
+  - _dazName: Genesis2Male__PHMEarBat
+    _ID: PHMEarBat
+    Label: Ear Bat
   - _dazName: Genesis2Female__Eye_Sag_Top
     _ID: Eye_Sag_Top
     Label: Eye _ Sag _ Top
@@ -81,6 +93,12 @@ MonoBehaviour:
   - _dazName: Genesis2Female__PHMEyesAngleR
     _ID: PHMEyesAngleR
     Label: Eyes Angle R
+  - _dazName: Genesis2Male__PHMEyesHeightL
+    _ID: PHMEyesHeightL
+    Label: Eyes Height L
+  - _dazName: Genesis2Male__PHMEyesHeightR
+    _ID: PHMEyesHeightR
+    Label: Eyes Height R
   - _dazName: Genesis2Female__PHMEyesSquintL
     _ID: PHMEyesSquintL
     Label: Eyes Squint L
@@ -99,6 +117,12 @@ MonoBehaviour:
   - _dazName: Genesis2Female__PHMFaceRoundR
     _ID: PHMFaceRoundR
     Label: Face Round R
+  - _dazName: Genesis2Male__PHMFaceSquareL
+    _ID: PHMFaceSquareL
+    Label: Face Square L
+  - _dazName: Genesis2Male__PHMFaceSquareR
+    _ID: PHMFaceSquareR
+    Label: Face Square R
   - _dazName: Genesis2Female__PHMFaceYoung
     _ID: PHMFaceYoung
     Label: Face Young
@@ -114,6 +138,9 @@ MonoBehaviour:
   - _dazName: Genesis2Female__FHMHag2
     _ID: FHMHag2
     Label: Hag 2
+  - _dazName: Genesis2Male__PBMHandsBeast
+    _ID: PBMHandsBeast
+    Label: Hands Beast
   - _dazName: Genesis2Female__PHMHappy
     _ID: PHMHappy
     Label: Happy
@@ -183,9 +210,15 @@ MonoBehaviour:
   - _dazName: Genesis2Female__PHMNoseDepth
     _ID: PHMNoseDepth
     Label: Nose Depth
+  - _dazName: Genesis2Male__PHMNoseHeight
+    _ID: PHMNoseHeight
+    Label: Nose Height
   - _dazName: Genesis2Female__PHMNoseSize
     _ID: PHMNoseSize
     Label: Nose Size
+  - _dazName: Genesis2Male__PBMPectoralsHeavy
+    _ID: PBMPectoralsHeavy
+    Label: Pectorals Heavy
   - _dazName: Genesis2Female__PHMScalpCrest
     _ID: PHMScalpCrest
     Label: Scalp Crest
@@ -228,6 +261,15 @@ MonoBehaviour:
   - _dazName: Genesis2Female__PBMWaistWidth
     _ID: PBMWaistWidth
     Label: Waist Width
+  - _dazName: Genesis2Male__FHMWarlock
+    _ID: FHMWarlock
+    Label: Warlock
+  - _dazName: Genesis2Male__FHMWizard
+    _ID: FHMWizard
+    Label: Wizard
+  - _dazName: Genesis2Male__FBMWizard
+    _ID: FBMWizard
+    Label: Wizard
   - _dazName: Genesis2Female__Youth_Posture
     _ID: Youth_Posture
     Label: Youth _ Posture

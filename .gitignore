@@ -36,4 +36,4 @@ ehthumbs.db
 # ===== #
 *.unitypackage
 *.unitypackage.meta
-./ProjectSettings/ProjectVersion.txt
+ProjectVersion.txt
