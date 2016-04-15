@@ -1,0 +1,170 @@
+fileFormatVersion: 2
+guid: a9cae8986ca574443bbbfd87c8f58bfb
+timeCreated: 1453489204
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: abdomen
+    100002: abdomen 1
+    100004: abdomen2
+    100006: abdomen2 1
+    100008: CasualLongCap
+    100010: CasualLongCap.Shape
+    100012: CasualLongHair
+    100014: //RootNode
+    100016: CasualLongHair.Shape_LOD0
+    100018: CasualLongHair.Shape_LOD1
+    100020: CasualLongHair.Shape_LOD2
+    100022: CasualLongHair.Shape_LOD3
+    100024: chest
+    100026: chest 1
+    100028: Genesis2Male
+    100030: head
+    100032: head 1
+    100034: hip
+    100036: hip 1
+    100038: lCollar
+    100040: lCollar 1
+    100042: lowerJaw
+    100044: lowerJaw 1
+    100046: lPectoral
+    100048: lPectoral 1
+    100050: lShldr
+    100052: lShldr 1
+    100054: neck
+    100056: neck 1
+    100058: rCollar
+    100060: rCollar 1
+    100062: rPectoral
+    100064: rPectoral 1
+    100066: rShldr
+    100068: rShldr 1
+    100070: CasualLong_CAP.Shape
+    100072: Genesis 2 Male
+    400000: abdomen
+    400002: abdomen 1
+    400004: abdomen2
+    400006: abdomen2 1
+    400008: CasualLongCap
+    400010: CasualLongCap.Shape
+    400012: //RootNode
+    400014: CasualLongHair
+    400016: CasualLongHair.Shape_LOD0
+    400018: CasualLongHair.Shape_LOD1
+    400020: CasualLongHair.Shape_LOD2
+    400022: CasualLongHair.Shape_LOD3
+    400024: chest
+    400026: chest 1
+    400028: Genesis2Male
+    400030: head
+    400032: head 1
+    400034: hip
+    400036: hip 1
+    400038: lCollar
+    400040: lCollar 1
+    400042: lowerJaw
+    400044: lowerJaw 1
+    400046: lPectoral
+    400048: lPectoral 1
+    400050: lShldr
+    400052: lShldr 1
+    400054: neck
+    400056: neck 1
+    400058: rCollar
+    400060: rCollar 1
+    400062: rPectoral
+    400064: rPectoral 1
+    400066: rShldr
+    400068: rShldr 1
+    400070: CasualLong_CAP.Shape
+    400072: Genesis 2 Male
+    4300000: CasualLongHair.Shape_LOD0
+    4300002: CasualLongHair.Shape_LOD1
+    4300004: CasualLongHair.Shape_LOD2
+    4300006: CasualLongHair.Shape_LOD3
+    4300008: CasualLongCap.Shape
+    4300010: CasualLong_CAP.Shape
+    9500000: //RootNode
+    11400000: CasualLongCap
+    11400002: CasualLongCap
+    11400004: CasualLongCap.Shape
+    11400006: CasualLongHair
+    11400008: CasualLongHair
+    11400010: CasualLongHair.Shape_LOD0
+    11400012: CasualLongHair.Shape_LOD1
+    11400014: CasualLongHair.Shape_LOD2
+    11400016: CasualLongHair.Shape_LOD3
+    11400018: CasualLong_CAP.Shape
+    13700000: CasualLongCap.Shape
+    13700002: CasualLongHair.Shape_LOD0
+    13700004: CasualLongHair.Shape_LOD1
+    13700006: CasualLongHair.Shape_LOD2
+    13700008: CasualLongHair.Shape_LOD3
+    13700010: CasualLong_CAP.Shape
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages:
+    - 0.25
+    - 0.01
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
