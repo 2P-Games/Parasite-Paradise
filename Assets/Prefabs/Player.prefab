@@ -275,7 +275,7 @@ MonoBehaviour:
   infectTimer: 0
   isPossessingEnemy: 0
   DefaultSkinnedMesh: {fileID: 0}
-  deathSound: {fileID: 0}
+  deathSound: {fileID: 8300000, guid: 92d4e86081dab124280a2206b6101d6f, type: 3}
 --- !u!135 &13575762
 SphereCollider:
   m_ObjectHideFlags: 1
