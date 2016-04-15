@@ -181,6 +181,9 @@ public class Player : MonoBehaviour {
         // dead players can't move or attack.
         this.controlsEnabled = false;
 
+        // play death sound
+        this.GetComponent<AudioSource>().PlayOneShot(this.deathSound);
+
         // not ideal, but temporary to give sense of death.
         Object.Destroy(this.gameObject);
     }
@@ -244,4 +247,7 @@ public class Player : MonoBehaviour {
 
     // used to reset the mesh after infection
     public SkinnedMeshRenderer DefaultSkinnedMesh;
+
+    // sound played on death
+    public AudioClip deathSound;
 }

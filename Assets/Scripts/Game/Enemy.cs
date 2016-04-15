@@ -89,6 +89,10 @@ public abstract class Enemy : BasicObject {
             /** Attack completed, add attack's delay to internal timer */
             // Note: using '=' to overwrite any "over reduction" that might have occured while Update() was reducing timer.
             this.internalAttackTimer = attackToMake.delay;
+
+            /** Play attacking sound **/
+            gameObject.GetComponent<AudioSource>().PlayOneShot(attackToMake.attackSound);
+
         }
     }
 
@@ -156,11 +160,16 @@ public abstract class Enemy : BasicObject {
         /** Play death animation **/
 
         /** Play death sound **/
-
-        // etc.
+        gameObject.GetComponent<AudioSource>().PlayOneShot(this.deathSound);
 
         // remove self from world
         Destroy(gameObject);
+    }
+
+    // returns true if this enemy is alive, false otherwise.
+    public bool IsDead()
+    {
+        return this.health <= 0;
     }
 
     // calculates and returns if this enemy can move
@@ -182,6 +191,9 @@ public abstract class Enemy : BasicObject {
         if(collider.tag.Equals("Player"))
         {
             this.LookAtPlayer();
+        } else
+        {
+            // dead enemy checking here
         }
     }
 
@@ -217,4 +229,6 @@ public abstract class Enemy : BasicObject {
     // walking speed of this enemy
     [SerializeField]
     protected float walkingSpeed;
+
+    public AudioClip deathSound;
 }
