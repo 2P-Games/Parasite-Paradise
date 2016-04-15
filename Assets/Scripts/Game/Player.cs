@@ -7,7 +7,7 @@ public class Player : MonoBehaviour {
     void Start()
     {
         this.controlsEnabled = true;
-        UIUpdater.UpdateHealthText(this.health);
+        UIUpdater.UpdateHealthBar(this.health);
     }
 
     // Update is called once per frame
@@ -16,12 +16,8 @@ public class Player : MonoBehaviour {
         if (this.controlsEnabled)
         {
             // player looking at mouse
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            Vector3 mousePosition = new Vector3(ray.origin.x, ray.origin.y, transform.position.z);
-            Quaternion rotationQuaternion = Quaternion.LookRotation(mousePosition - transform.position);
-            rotationQuaternion.y = 0;
-            rotationQuaternion.x = 0;
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, rotationQuaternion, rotationSpeed * Time.deltaTime);
+            Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            transform.rotation = Quaternion.LookRotation(Vector3.forward, mousePos - transform.position);
 
             /** Note: Using GetKey() because force needs to be added every frame while key is down, not only once. **/
 
@@ -80,7 +76,6 @@ public class Player : MonoBehaviour {
             // turn off movement while infecting
             this.controlsEnabled = false;
             infectionTarget.EnterInfectionStasis();
-
 
         }
 
@@ -170,7 +165,7 @@ public class Player : MonoBehaviour {
         }
 
         // update the player's on-screen health UI
-        UIUpdater.UpdateHealthText(this.health);
+        UIUpdater.UpdateHealthBar(this.health);
 
         return this.health;
     }
@@ -212,7 +207,6 @@ public class Player : MonoBehaviour {
         {
             case "Enemy":
                 // collision with the collider of the enemy gameObject
-                Debug.Log("Player collision with " + collision.collider.gameObject.name);
                 break;
             default:
                 // walls, etc.
