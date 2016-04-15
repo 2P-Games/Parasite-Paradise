@@ -158,10 +158,14 @@ public class Player : MonoBehaviour {
     public int TakeDamage(int damageAmount)
     {
 
-        if((this.health -= damageAmount) <= 0)
+        // if player is not already dead and damage kills player, player dies.
+        if (this.health != 0)
         {
-            this.health = 0;
-            this.Die();
+            if ((this.health -= damageAmount) <= 0)
+            {
+                this.health = 0;
+                this.Die();
+            }
         }
 
         // update the player's on-screen health UI
@@ -180,7 +184,7 @@ public class Player : MonoBehaviour {
         this.GetComponent<AudioSource>().PlayOneShot(this.deathSound);
 
         // not ideal, but temporary to give sense of death.
-        Object.Destroy(this.gameObject);
+       // Object.Destroy(this.gameObject);
     }
 
     // add enemies that are close enough to an arraylist
@@ -207,6 +211,7 @@ public class Player : MonoBehaviour {
         {
             case "Enemy":
                 // collision with the collider of the enemy gameObject
+                this.TakeDamage(50);
                 break;
             default:
                 // walls, etc.
