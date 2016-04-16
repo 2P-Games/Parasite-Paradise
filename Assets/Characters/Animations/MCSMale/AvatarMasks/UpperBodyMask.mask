@@ -1,0 +1,196 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1011 &101100000
+AvatarMask:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: UpperBodyMask
+  m_Mask: 00000000010000000100000000000000000000000100000001000000010000000100000000000000000000000100000001000000
+  m_Elements:
+  - m_Path: 
+    m_Weight: 1
+  - m_Path: Genesis 2 Male
+    m_Weight: 1
+  - m_Path: Genesis 2 Male/G2FSimplifiedEyes
+    m_Weight: 1
+  - m_Path: Genesis 2 Male/G2FSimplifiedEyes/G2FSimplifiedEyes_394.Shape_LOD0
+    m_Weight: 1
+  - m_Path: Genesis 2 Male/G2FSimplifiedEyes/G2FSimplifiedEyes_394.Shape_LOD1
+    m_Weight: 1
+  - m_Path: Genesis 2 Male/Genesis2Male.Shape_LOD0
+    m_Weight: 1
+  - m_Path: Genesis 2 Male/Genesis2Male.Shape_LOD1
+    m_Weight: 1
+  - m_Path: Genesis 2 Male/Genesis2Male.Shape_LOD2
+    m_Weight: 1
+  - m_Path: Genesis 2 Male/Genesis2Male.Shape_LOD3
+    m_Weight: 1
+  - m_Path: Genesis 2 Male/Genesis2Male.Shape_LOD4
+    m_Weight: 1
+  - m_Path: Genesis 2 Male/Genesis2Male.Shape_LOD5
+    m_Weight: 1
+  - m_Path: Genesis 2 Male/hip
+    m_Weight: 1
+  - m_Path: Genesis 2 Male/hip/abdomen
+    m_Weight: 1
+  - m_Path: Genesis 2 Male/hip/abdomen/abdomen2
+    m_Weight: 1
+  - m_Path: Genesis 2 Male/hip/abdomen/abdomen2/chest
+    m_Weight: 1
+  - m_Path: Genesis 2 Male/hip/abdomen/abdomen2/chest/lCollar
+    m_Weight: 1
+  - m_Path: Genesis 2 Male/hip/abdomen/abdomen2/chest/lCollar/lShldr
+    m_Weight: 1
+  - m_Path: Genesis 2 Male/hip/abdomen/abdomen2/chest/lCollar/lShldr/lForeArm
+    m_Weight: 1
+  - m_Path: Genesis 2 Male/hip/abdomen/abdomen2/chest/lCollar/lShldr/lForeArm/lHand
+    m_Weight: 1
+  - m_Path: Genesis 2 Male/hip/abdomen/abdomen2/chest/lCollar/lShldr/lForeArm/lHand/lCarpal1
+    m_Weight: 1
+  - m_Path: Genesis 2 Male/hip/abdomen/abdomen2/chest/lCollar/lShldr/lForeArm/lHand/lCarpal1/lIndex1
+    m_Weight: 1
+  - m_Path: Genesis 2 Male/hip/abdomen/abdomen2/chest/lCollar/lShldr/lForeArm/lHand/lCarpal1/lIndex1/lIndex2
+    m_Weight: 1
+  - m_Path: Genesis 2 Male/hip/abdomen/abdomen2/chest/lCollar/lShldr/lForeArm/lHand/lCarpal1/lIndex1/lIndex2/lIndex3
+    m_Weight: 1
+  - m_Path: Genesis 2 Male/hip/abdomen/abdomen2/chest/lCollar/lShldr/lForeArm/lHand/lCarpal1/lMid1
+    m_Weight: 1
+  - m_Path: Genesis 2 Male/hip/abdomen/abdomen2/chest/lCollar/lShldr/lForeArm/lHand/lCarpal1/lMid1/lMid2
+    m_Weight: 1
+  - m_Path: Genesis 2 Male/hip/abdomen/abdomen2/chest/lCollar/lShldr/lForeArm/lHand/lCarpal1/lMid1/lMid2/lMid3
+    m_Weight: 1
+  - m_Path: Genesis 2 Male/hip/abdomen/abdomen2/chest/lCollar/lShldr/lForeArm/lHand/lCarpal2
+    m_Weight: 1
+  - m_Path: Genesis 2 Male/hip/abdomen/abdomen2/chest/lCollar/lShldr/lForeArm/lHand/lCarpal2/lPinky1
+    m_Weight: 1
+  - m_Path: Genesis 2 Male/hip/abdomen/abdomen2/chest/lCollar/lShldr/lForeArm/lHand/lCarpal2/lPinky1/lPinky2
+    m_Weight: 1
+  - m_Path: Genesis 2 Male/hip/abdomen/abdomen2/chest/lCollar/lShldr/lForeArm/lHand/lCarpal2/lPinky1/lPinky2/lPinky3
+    m_Weight: 1
+  - m_Path: Genesis 2 Male/hip/abdomen/abdomen2/chest/lCollar/lShldr/lForeArm/lHand/lCarpal2/lRing1
+    m_Weight: 1
+  - m_Path: Genesis 2 Male/hip/abdomen/abdomen2/chest/lCollar/lShldr/lForeArm/lHand/lCarpal2/lRing1/lRing2
+    m_Weight: 1
+  - m_Path: Genesis 2 Male/hip/abdomen/abdomen2/chest/lCollar/lShldr/lForeArm/lHand/lCarpal2/lRing1/lRing2/lRing3
+    m_Weight: 1
+  - m_Path: Genesis 2 Male/hip/abdomen/abdomen2/chest/lCollar/lShldr/lForeArm/lHand/lHandAttachmentPointL
+    m_Weight: 1
+  - m_Path: Genesis 2 Male/hip/abdomen/abdomen2/chest/lCollar/lShldr/lForeArm/lHand/lThumb1
+    m_Weight: 1
+  - m_Path: Genesis 2 Male/hip/abdomen/abdomen2/chest/lCollar/lShldr/lForeArm/lHand/lThumb1/lThumb2
+    m_Weight: 1
+  - m_Path: Genesis 2 Male/hip/abdomen/abdomen2/chest/lCollar/lShldr/lForeArm/lHand/lThumb1/lThumb2/lThumb3
+    m_Weight: 1
+  - m_Path: Genesis 2 Male/hip/abdomen/abdomen2/chest/lPectoral
+    m_Weight: 1
+  - m_Path: Genesis 2 Male/hip/abdomen/abdomen2/chest/neck
+    m_Weight: 1
+  - m_Path: Genesis 2 Male/hip/abdomen/abdomen2/chest/neck/head
+    m_Weight: 1
+  - m_Path: Genesis 2 Male/hip/abdomen/abdomen2/chest/neck/head/lEye
+    m_Weight: 1
+  - m_Path: Genesis 2 Male/hip/abdomen/abdomen2/chest/neck/head/lowerJaw
+    m_Weight: 1
+  - m_Path: Genesis 2 Male/hip/abdomen/abdomen2/chest/neck/head/lowerJaw/tongueBase
+    m_Weight: 1
+  - m_Path: Genesis 2 Male/hip/abdomen/abdomen2/chest/neck/head/lowerJaw/tongueBase/tongue01
+    m_Weight: 1
+  - m_Path: Genesis 2 Male/hip/abdomen/abdomen2/chest/neck/head/lowerJaw/tongueBase/tongue01/tongue02
+    m_Weight: 1
+  - m_Path: Genesis 2 Male/hip/abdomen/abdomen2/chest/neck/head/lowerJaw/tongueBase/tongue01/tongue02/tongue03
+    m_Weight: 1
+  - m_Path: Genesis 2 Male/hip/abdomen/abdomen2/chest/neck/head/lowerJaw/tongueBase/tongue01/tongue02/tongue03/tongue04
+    m_Weight: 1
+  - m_Path: Genesis 2 Male/hip/abdomen/abdomen2/chest/neck/head/lowerJaw/tongueBase/tongue01/tongue02/tongue03/tongue04/tongue05
+    m_Weight: 1
+  - m_Path: Genesis 2 Male/hip/abdomen/abdomen2/chest/neck/head/lowerJaw/tongueBase/tongue01/tongue02/tongue03/tongue04/tongue05/tongueTip
+    m_Weight: 1
+  - m_Path: Genesis 2 Male/hip/abdomen/abdomen2/chest/neck/head/rEye
+    m_Weight: 1
+  - m_Path: Genesis 2 Male/hip/abdomen/abdomen2/chest/neck/head/upperJaw
+    m_Weight: 1
+  - m_Path: Genesis 2 Male/hip/abdomen/abdomen2/chest/rCollar
+    m_Weight: 1
+  - m_Path: Genesis 2 Male/hip/abdomen/abdomen2/chest/rCollar/rShldr
+    m_Weight: 1
+  - m_Path: Genesis 2 Male/hip/abdomen/abdomen2/chest/rCollar/rShldr/rForeArm
+    m_Weight: 1
+  - m_Path: Genesis 2 Male/hip/abdomen/abdomen2/chest/rCollar/rShldr/rForeArm/rHand
+    m_Weight: 1
+  - m_Path: Genesis 2 Male/hip/abdomen/abdomen2/chest/rCollar/rShldr/rForeArm/rHand/rCarpal1
+    m_Weight: 1
+  - m_Path: Genesis 2 Male/hip/abdomen/abdomen2/chest/rCollar/rShldr/rForeArm/rHand/rCarpal1/rIndex1
+    m_Weight: 1
+  - m_Path: Genesis 2 Male/hip/abdomen/abdomen2/chest/rCollar/rShldr/rForeArm/rHand/rCarpal1/rIndex1/rIndex2
+    m_Weight: 1
+  - m_Path: Genesis 2 Male/hip/abdomen/abdomen2/chest/rCollar/rShldr/rForeArm/rHand/rCarpal1/rIndex1/rIndex2/rIndex3
+    m_Weight: 1
+  - m_Path: Genesis 2 Male/hip/abdomen/abdomen2/chest/rCollar/rShldr/rForeArm/rHand/rCarpal1/rMid1
+    m_Weight: 1
+  - m_Path: Genesis 2 Male/hip/abdomen/abdomen2/chest/rCollar/rShldr/rForeArm/rHand/rCarpal1/rMid1/rMid2
+    m_Weight: 1
+  - m_Path: Genesis 2 Male/hip/abdomen/abdomen2/chest/rCollar/rShldr/rForeArm/rHand/rCarpal1/rMid1/rMid2/rMid3
+    m_Weight: 1
+  - m_Path: Genesis 2 Male/hip/abdomen/abdomen2/chest/rCollar/rShldr/rForeArm/rHand/rCarpal2
+    m_Weight: 1
+  - m_Path: Genesis 2 Male/hip/abdomen/abdomen2/chest/rCollar/rShldr/rForeArm/rHand/rCarpal2/rPinky1
+    m_Weight: 1
+  - m_Path: Genesis 2 Male/hip/abdomen/abdomen2/chest/rCollar/rShldr/rForeArm/rHand/rCarpal2/rPinky1/rPinky2
+    m_Weight: 1
+  - m_Path: Genesis 2 Male/hip/abdomen/abdomen2/chest/rCollar/rShldr/rForeArm/rHand/rCarpal2/rPinky1/rPinky2/rPinky3
+    m_Weight: 1
+  - m_Path: Genesis 2 Male/hip/abdomen/abdomen2/chest/rCollar/rShldr/rForeArm/rHand/rCarpal2/rRing1
+    m_Weight: 1
+  - m_Path: Genesis 2 Male/hip/abdomen/abdomen2/chest/rCollar/rShldr/rForeArm/rHand/rCarpal2/rRing1/rRing2
+    m_Weight: 1
+  - m_Path: Genesis 2 Male/hip/abdomen/abdomen2/chest/rCollar/rShldr/rForeArm/rHand/rCarpal2/rRing1/rRing2/rRing3
+    m_Weight: 1
+  - m_Path: Genesis 2 Male/hip/abdomen/abdomen2/chest/rCollar/rShldr/rForeArm/rHand/rHandAttachmentPointR
+    m_Weight: 1
+  - m_Path: Genesis 2 Male/hip/abdomen/abdomen2/chest/rCollar/rShldr/rForeArm/rHand/rThumb1
+    m_Weight: 1
+  - m_Path: Genesis 2 Male/hip/abdomen/abdomen2/chest/rCollar/rShldr/rForeArm/rHand/rThumb1/rThumb2
+    m_Weight: 1
+  - m_Path: Genesis 2 Male/hip/abdomen/abdomen2/chest/rCollar/rShldr/rForeArm/rHand/rThumb1/rThumb2/rThumb3
+    m_Weight: 1
+  - m_Path: Genesis 2 Male/hip/abdomen/abdomen2/chest/rPectoral
+    m_Weight: 1
+  - m_Path: Genesis 2 Male/hip/pelvis
+    m_Weight: 1
+  - m_Path: Genesis 2 Male/hip/pelvis/lThigh
+    m_Weight: 1
+  - m_Path: Genesis 2 Male/hip/pelvis/lThigh/lShin
+    m_Weight: 1
+  - m_Path: Genesis 2 Male/hip/pelvis/lThigh/lShin/lFoot
+    m_Weight: 1
+  - m_Path: Genesis 2 Male/hip/pelvis/lThigh/lShin/lFoot/lToe
+    m_Weight: 1
+  - m_Path: Genesis 2 Male/hip/pelvis/lThigh/lShin/lFoot/lToe/lBigToe
+    m_Weight: 1
+  - m_Path: Genesis 2 Male/hip/pelvis/lThigh/lShin/lFoot/lToe/lSmallToe1
+    m_Weight: 1
+  - m_Path: Genesis 2 Male/hip/pelvis/lThigh/lShin/lFoot/lToe/lSmallToe2
+    m_Weight: 1
+  - m_Path: Genesis 2 Male/hip/pelvis/lThigh/lShin/lFoot/lToe/lSmallToe3
+    m_Weight: 1
+  - m_Path: Genesis 2 Male/hip/pelvis/lThigh/lShin/lFoot/lToe/lSmallToe4
+    m_Weight: 1
+  - m_Path: Genesis 2 Male/hip/pelvis/rThigh
+    m_Weight: 1
+  - m_Path: Genesis 2 Male/hip/pelvis/rThigh/rShin
+    m_Weight: 1
+  - m_Path: Genesis 2 Male/hip/pelvis/rThigh/rShin/rFoot
+    m_Weight: 1
+  - m_Path: Genesis 2 Male/hip/pelvis/rThigh/rShin/rFoot/rToe
+    m_Weight: 1
+  - m_Path: Genesis 2 Male/hip/pelvis/rThigh/rShin/rFoot/rToe/rBigToe
+    m_Weight: 1
+  - m_Path: Genesis 2 Male/hip/pelvis/rThigh/rShin/rFoot/rToe/rSmallToe1
+    m_Weight: 1
+  - m_Path: Genesis 2 Male/hip/pelvis/rThigh/rShin/rFoot/rToe/rSmallToe2
+    m_Weight: 1
+  - m_Path: Genesis 2 Male/hip/pelvis/rThigh/rShin/rFoot/rToe/rSmallToe3
+    m_Weight: 1
+  - m_Path: Genesis 2 Male/hip/pelvis/rThigh/rShin/rFoot/rToe/rSmallToe4
+    m_Weight: 1

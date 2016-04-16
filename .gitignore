@@ -34,6 +34,7 @@ ehthumbs.db
 # ===== #
 # Other #
 # ===== #
-*.unitypackage
-*.unitypackage.meta
+#*.unitypackage
+#*.unitypackage.meta
 ProjectVersion.txt
+CreatureTextures.zip

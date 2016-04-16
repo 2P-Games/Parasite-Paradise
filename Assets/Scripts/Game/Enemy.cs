@@ -14,8 +14,10 @@ public abstract class Enemy : BasicObject {
     {
         base.Start();
         internalAttackTimer = 0.0f;
+        this.currentState = BehaviorState.Passive;
         this.arrayOfAttacks = this.gameObject.GetComponents<Attack>();
         this.destinationPathNode = PathNodeLibrary.GetNearestPathNodeFromLocation(this.gameObject.transform.position);
+        this.visionRadius = this.GetComponent<SphereCollider>().radius;
     }
 
     protected virtual void Update()
@@ -32,22 +34,43 @@ public abstract class Enemy : BasicObject {
         }
 
         /** Moving **/
-        if(this.CanMove())
+        if (this.CanMove())
         {
             this.Move();
-        } else
+        }
+        else
         {
             this.moveDelay -= Time.deltaTime;
+        }
+
+        /** If not passive, start counting down until becoming passive. **/
+        if (stateTimer > 0.0f)
+        {
+            stateTimer -= Time.deltaTime;
+        }
+        else if(this.currentState == BehaviorState.Alerted || this.currentState == BehaviorState.Restless)
+        {
+            this.currentState = BehaviorState.Passive;
+            stateTimer = 0.0f;
         }
     }
 
     // virtual baseline move method 
     public virtual void Move()
     {
-
         float step = Time.deltaTime * this.walkingSpeed;
-        this.transform.position = Vector3.MoveTowards(this.transform.position, this.destinationPathNode.transform.position, step);
-    
+
+        switch (this.currentState) {
+            case BehaviorState.Passive:
+                this.transform.position = Vector3.MoveTowards(this.transform.position, this.destinationPathNode.transform.position, step);
+                break;
+            case BehaviorState.Alerted:
+                this.transform.position = Vector3.MoveTowards(this.transform.position, this.playerReference.transform.position, step);
+                break;
+            case BehaviorState.Restless:
+                this.transform.position = Vector3.MoveTowards(this.transform.position, this.destinationPathNode.transform.position, step);
+                break;
+        }
     }
 
     // virtual baseline attack method 
@@ -89,6 +112,10 @@ public abstract class Enemy : BasicObject {
             /** Attack completed, add attack's delay to internal timer */
             // Note: using '=' to overwrite any "over reduction" that might have occured while Update() was reducing timer.
             this.internalAttackTimer = attackToMake.delay;
+
+            /** Play attacking sound **/
+            gameObject.GetComponent<AudioSource>().PlayOneShot(attackToMake.attackSound);
+
         }
     }
 
@@ -156,11 +183,17 @@ public abstract class Enemy : BasicObject {
         /** Play death animation **/
 
         /** Play death sound **/
+        gameObject.GetComponent<AudioSource>().PlayOneShot(this.deathSound);
 
-        // etc.
+        // disable movement and attacks
+        this.movementEnabled = false;
+        this.attackEnabled = false;
+    }
 
-        // remove self from world
-        Destroy(gameObject);
+    // returns true if this enemy is alive, false otherwise.
+    public bool IsDead()
+    {
+        return this.health <= 0;
     }
 
     // calculates and returns if this enemy can move
@@ -172,17 +205,71 @@ public abstract class Enemy : BasicObject {
     // called when the enemy reaches its destination path node from moving
     public void ReachedPathNode()
     {
-        this.moveDelay += Random.Range(this.MAXIMUM_MOVEMENT_DELAY / 2.0f, this.MAXIMUM_MOVEMENT_DELAY);
+        switch (this.currentState) {
+            case BehaviorState.Passive:
+            case BehaviorState.Alerted:
+            this.moveDelay += Random.Range(this.PassiveMaxMovementDelay / 2.0f, this.PassiveMaxMovementDelay);
+                break;
+            case BehaviorState.Restless:
+                this.moveDelay += Random.Range(this.RestlessMaxMovementDelay / 2.0f, this.RestlessMaxMovementDelay);
+                break;
+        }
     }
 
-    // fired when something remains within a collider (designated as a trigger)
-    protected virtual void OnTriggerStay(Collider collider)
+    // check things that enter vision
+    void OnTriggerEnter(Collider collider)
     {
-        // all enemies look at the player when the player enters the trigger AOE
-        if(collider.tag.Equals("Player"))
+
+        // Create a vector from the enemy to the player and store the angle between it and forward.
+        Vector3 direction = transform.position - collider.transform.position;
+        float angle = Vector3.Angle(direction, transform.forward);
+
+        // If the angle between forward and where the object is, is less than half the angle of view...
+        if (angle < this.visionAngle * 0.5f)
         {
-            this.LookAtPlayer();
+            // Object in view is player
+            if (collider.tag.Equals("Player"))
+            {
+                // The player is in sight.
+                if (this.currentState != BehaviorState.Alerted)
+                {
+                    // become alerted and increase state timer.
+                    this.currentState = BehaviorState.Alerted;
+                    stateTimer = 20.0f;
+                }
+            }
+
+            // Object in view is another enemy
+            else if (collider.tag.Equals("Enemy"))
+            {
+                // dead body checking
+                if(collider.gameObject.GetComponent<Enemy>().IsDead() && this.currentState != BehaviorState.Alerted)
+                {
+                    // If not Alerted become restless  and increase state timer.
+                    this.currentState = BehaviorState.Restless;
+                    stateTimer = 45.0f;
+                }
+            }
         }
+ 
+    }
+
+    void OnTriggerStay(Collider collider)
+    {
+        if (collider.tag.Equals("Player"))
+        {
+            /** Player in vision **/
+            if (this.currentState == BehaviorState.Alerted)
+            {
+                this.LookAtPlayer();
+                stateTimer = 20.0f;
+            }
+        }
+    }
+
+    void OnTriggerExit(Collider collider)
+    {
+        
     }
 
     public float timeToInfect;
@@ -199,13 +286,21 @@ public abstract class Enemy : BasicObject {
     [SerializeField]
     protected float moveDelay;
 
+    public float visionAngle;
+
+    private float visionRadius;
+
     [SerializeField]
-    protected float MAXIMUM_MOVEMENT_DELAY;
+    protected float PassiveMaxMovementDelay;
+
+    [SerializeField]
+    protected float RestlessMaxMovementDelay;
 
     // can this enemy move?
     [SerializeField]
     protected bool movementEnabled;
 
+    // can this enemy currently attack
     protected bool attackEnabled = true;
 
     // array of possible attacks that this enemy can make
@@ -217,4 +312,10 @@ public abstract class Enemy : BasicObject {
     // walking speed of this enemy
     [SerializeField]
     protected float walkingSpeed;
+
+    public BehaviorState currentState;
+
+    public float stateTimer;
+
+    public AudioClip deathSound;
 }

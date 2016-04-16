@@ -12,7 +12,8 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 		private Vector3 m_CamForward;             // The current forward direction of the camera
 		private Vector3 m_Move;
 		private bool m_Jump;                      // the world-relative desired move direction, calculated from the camForward and user input.
-
+		private bool m_Attack;
+		private bool m_Infect;
 
 		private void Start()
 		{
@@ -39,6 +40,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 			{
 				m_Jump = CrossPlatformInputManager.GetButtonDown("Jump");
 			}
+
 		}
 
 
@@ -49,7 +51,6 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 			float h = CrossPlatformInputManager.GetAxis("Horizontal");
 			float v = CrossPlatformInputManager.GetAxis("Vertical");
 			bool crouch = Input.GetKey(KeyCode.C);
-			bool attack = false; //= Input.GetKey(KeyCode.X);
 
 			// calculate move direction to pass to character
 			if (m_Cam != null)
@@ -68,8 +69,22 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 			if (Input.GetKey(KeyCode.LeftShift)) m_Move *= 0.5f;
 			#endif
 
+			if (Input.GetKeyDown ("x")) {
+				m_Attack = true;
+			}
+			if (Input.GetKeyUp ("x")) {
+				m_Attack = false;
+			}
+
+			if (Input.GetKeyDown ("i")) {
+				m_Infect = true;
+			}
+			if (Input.GetKeyUp ("i")) {
+				m_Infect = false;
+			}
+
 			// pass all parameters to the character control script
-			m_Character.Move(m_Move, crouch, false, m_Jump);
+			m_Character.Move(m_Move, crouch, m_Attack, m_Infect, m_Jump);
 			m_Jump = false;
 		}
 	}

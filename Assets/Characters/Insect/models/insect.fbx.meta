@@ -327,8 +327,8 @@ ModelImporter:
     - serializedVersion: 16
       name: Attack_Right
       takeName: Attack_Right
-      firstFrame: -1
-      lastFrame: 78
+      firstFrame: 0
+      lastFrame: 54
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -747,8 +747,8 @@ ModelImporter:
     - serializedVersion: 16
       name: Walk_Attack
       takeName: Walk_Attack
-      firstFrame: -1
-      lastFrame: 39
+      firstFrame: 0
+      lastFrame: 27
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

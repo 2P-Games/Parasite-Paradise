@@ -44,6 +44,9 @@ public class Attack : MonoBehaviour {
     // the range type of this attack
     public RangeType attackType;
 
+    // audio of the attack
+    public AudioClip attackSound;
+
     // enum selection of range type
     public enum RangeType
     {

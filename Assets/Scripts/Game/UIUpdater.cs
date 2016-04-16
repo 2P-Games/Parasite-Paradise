@@ -6,16 +6,16 @@ public class UIUpdater : BasicObject {
 
     void Awake () {
         base.Start();
-        HealthText = GameObject.Find("Health Text");
+        HealthBar = GameObject.Find("Health Bar");
         StealthOverlay = GameObject.Find("Stealth Overlay");
         PauseOverlay = GameObject.Find("Paused UI");
         PauseOverlay.SetActive(false);
     }
 
     // updates health UI on screen to given number
-    public static void UpdateHealthText(int currentHealth)
+    public static void UpdateHealthBar(int currentHealth)
     {
-        HealthText.GetComponent<Text>().text = "Health: " + currentHealth;
+        HealthBar.GetComponent<Slider>().value = currentHealth;
     }
 
     // change overlay color based on given detection
@@ -48,7 +48,7 @@ public class UIUpdater : BasicObject {
     /** References to UI objects for one-time, fast access **/
     /** Set references in editor **/
 
-    private static GameObject HealthText;
+    private static GameObject HealthBar;
     private static GameObject StealthOverlay;
     private static GameObject PauseOverlay;
 
