@@ -5,7 +5,7 @@ using UnityStandardAssets.CrossPlatformInput;
 namespace UnityStandardAssets.Characters.ThirdPerson
 {
 	[RequireComponent(typeof (EnemyCharacter))]
-	public class EnemyControl : MonoBehaviour
+	public class EnemyControl : Enemy
 	{
 		private EnemyCharacter m_Character; // A reference to the EnemyCharacter on the object
 		private Transform m_Cam;                  // A reference to the main camera in the scenes transform
