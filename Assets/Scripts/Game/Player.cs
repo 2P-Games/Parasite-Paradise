@@ -192,9 +192,6 @@ public class Player : MonoBehaviour {
     }
 
     [SerializeField]
-    private float maxSpeed;
-
-    [SerializeField]
     private int health = 100;
 
     [SerializeField]

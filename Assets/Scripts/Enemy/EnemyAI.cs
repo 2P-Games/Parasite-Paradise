@@ -34,8 +34,8 @@ public class EnemyAI : MonoBehaviour {
 
     void Awake() {
         // Setting up the references.
-        enemySight = GetComponent<EnemySight>();
-        nav = GetComponent<NavMeshAgent>();
+		enemySight = this.gameObject.GetComponent<EnemySight>();
+		nav = this.gameObject.GetComponent<NavMeshAgent>();
         playerHealth = GameObject.FindGameObjectWithTag(Tags.player).GetComponent<PlayerHealth>();
         lastPlayerSighting = GameObject.FindGameObjectWithTag(Tags.gameController).GetComponent<LastPlayerSighting>();
     }
