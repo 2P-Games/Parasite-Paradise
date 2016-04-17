@@ -55,7 +55,6 @@ public class FinalDialog : MonoBehaviour {
             //Finish and move on to scene.
             line--;
         }
-        
 
     }
 }
