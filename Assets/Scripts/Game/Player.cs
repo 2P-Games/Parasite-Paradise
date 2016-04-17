@@ -3,52 +3,24 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class Player : MonoBehaviour {
-	
+
+	private Animator m_Animator;
     void Start()
     {
         this.controlsEnabled = true;
         UIUpdater.UpdateHealthBar(this.health);
     }
 
+	void Awake()
+	{
+		m_Animator = this.gameObject.GetComponent<Animator>();
+	}
+
     // Update is called once per frame
     void Update () {
 
-        if (this.controlsEnabled)
-        {
-            // player looking at mouse
-            Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            transform.rotation = Quaternion.LookRotation(Vector3.forward, mousePos - transform.position);
-
-            /** Note: Using GetKey() because force needs to be added every frame while key is down, not only once. **/
-
-            // upward movement
-            if (Input.GetKey(KeyCode.W))
-            {
-                gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(0, maxSpeed, 0) * this.acceleration);
-            }
-
-            // left movement
-            if (Input.GetKey(KeyCode.A))
-            {
-                gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(-maxSpeed, 0, 0) * this.acceleration);
-            }
-
-            // down movement
-            if (Input.GetKey(KeyCode.S))
-            {
-                gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(0, -maxSpeed, 0) * this.acceleration);
-            }
-
-            // right movement
-            if (Input.GetKey(KeyCode.D))
-            {
-                gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(maxSpeed, 0, 0) * this.acceleration);
-            }
-
-        }
-
         // attempt to acquire an enemy target once
-        if(Input.GetKeyDown(KeyCode.Space))
+        if(Input.GetKeyDown(KeyCode.I))
         {
 
             // if no enemies are close enough or is already infecting an enemy, cannot possess new target.
@@ -80,7 +52,7 @@ public class Player : MonoBehaviour {
         }
 
         // continue to hold down spacebar to fill infection bar
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKey(KeyCode.I))
         {
 
             // if we currently are not possessing an enemy, and a target has been successfully selected, begin infection.
@@ -99,7 +71,7 @@ public class Player : MonoBehaviour {
             }
         }
 
-        if(Input.GetKeyUp(KeyCode.Space))
+        if(Input.GetKeyUp(KeyCode.I))
         {
             if (this.infectTimer > 0.0f)
             {
@@ -220,16 +192,10 @@ public class Player : MonoBehaviour {
     }
 
     [SerializeField]
-    private float acceleration;
-
-    [SerializeField]
     private float maxSpeed;
 
     [SerializeField]
     private int health = 100;
-
-    [SerializeField]
-    private float rotationSpeed = 200.0f;
 
     [SerializeField]
     private float infectTimer = 0.0f;

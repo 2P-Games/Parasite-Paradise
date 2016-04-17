@@ -28,7 +28,6 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 		Vector3 m_CapsuleCenter;
 		CapsuleCollider m_Capsule;
 		bool m_Crouching;
-		bool m_Attacking;
 
 
 		void Start()
@@ -68,7 +67,6 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 			{
 				HandleAirborneMovement();
 			}
-			m_Attacking = attack;
 
 			ScaleCapsuleForCrouching(crouch);
 			PreventStandingInLowHeadroom();
@@ -124,7 +122,6 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 			m_Animator.SetFloat("Turn", m_TurnAmount, 0.1f, Time.deltaTime);
 			m_Animator.SetBool("Crouch", m_Crouching);
 			m_Animator.SetBool("OnGround", m_IsGrounded);
-			//m_Animator.SetBool("BasicAttack", m_Attacking);
 			if (!m_IsGrounded)
 			{
 				m_Animator.SetFloat("Jump", m_Rigidbody.velocity.y);

@@ -166,7 +166,7 @@ public class LaserSwitchDeactivation : MonoBehaviour {
             guiField.SetActive(true);
             guiInteractText.SetActive(false);
 
-            player.GetComponent<ThirdPersonCharacter>().Disable(true);
+            player.GetComponent<PlayerControl>().Disable(true);
         }
         else {
             Camera.main.transform.parent = cameraOriginalAnchor;
@@ -181,7 +181,7 @@ public class LaserSwitchDeactivation : MonoBehaviour {
             guiField.SetActive(false);
             guiInteractText.SetActive(true);
 
-            player.GetComponent<ThirdPersonCharacter>().Disable(false);
+            player.GetComponent<PlayerControl>().Disable(false);
         }
         Camera.main.transform.localPosition = Vector3.zero;
         Camera.main.transform.localRotation = Quaternion.identity;

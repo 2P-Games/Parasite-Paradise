@@ -73,7 +73,7 @@ public class LiftTrigger : MonoBehaviour {
         // If the timer is greater than the amount of time before the lift should start...
         if (timer >= timeToLiftStart) {
             // ... stop the player and the camera moving and parent the player to the lift.
-            player.GetComponent<ThirdPersonCharacter>().Disable(true);
+            player.GetComponent<PlayerControl>().Disable(true);
             player.transform.parent = transform;
 
             // Move the lift upwards.

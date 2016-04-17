@@ -71,7 +71,7 @@ public class EnemySight : MonoBehaviour {
             // If the angle between forward and where the player is, is less than half the angle of view...
             if (angle < fieldOfViewAngle * 0.5f) {
                 Vector3 rayOrigin = transform.position + 2 * transform.up;
-                Vector3 rayDestination = other.GetComponent<ThirdPersonCharacter>().head.position;
+                Vector3 rayDestination = other.GetComponent<PlayerControl>().head.position;
                 Vector3 rayDirection = rayDestination - rayOrigin;
 
                 // ... and if a raycast towards the player hits something...
@@ -97,7 +97,7 @@ public class EnemySight : MonoBehaviour {
                 }
             }
 
-            if (player.GetComponent<ThirdPersonCharacter>().state == "run") {
+            if (player.GetComponent<PlayerControl>().state == "run") {
                 // ... and if the player is within hearing range...
                 if (CalculatePathLength(player.transform.position) <= col.radius) {
                     // ... set the last personal sighting of the player to the player's current position.

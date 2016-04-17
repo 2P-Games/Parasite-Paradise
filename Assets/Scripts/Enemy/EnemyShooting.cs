@@ -77,7 +77,7 @@ public class EnemyShooting : MonoBehaviour {
         float aimWeight = anim.GetFloat(hash.aimWeightFloat);
 
         // Set the IK position of the right hand to the player's centre.
-        anim.SetIKPosition(AvatarIKGoal.RightHand, player.GetComponent<ThirdPersonCharacter>().head.position);
+        anim.SetIKPosition(AvatarIKGoal.RightHand, player.GetComponent<PlayerControl>().head.position);
 
         // Set the weight of the IK compared to animation to that of the curve.
         anim.SetIKPositionWeight(AvatarIKGoal.RightHand, aimWeight);
@@ -88,7 +88,7 @@ public class EnemyShooting : MonoBehaviour {
         shooting = true;
 
         // The fractional distance from the player, 1 is next to the player, 0 is the player is at the extent of the sphere collider.
-        float fractionalDistance = (col.radius - Vector3.Distance(transform.position, player.GetComponent<ThirdPersonCharacter>().head.position)) / col.radius;
+        float fractionalDistance = (col.radius - Vector3.Distance(transform.position, player.GetComponent<PlayerControl>().head.position)) / col.radius;
 
         // The damage is the scaled damage, scaled by the fractional distance, plus the minimum damage.
         float damage = scaledDamage * fractionalDistance + minimumDamage;
@@ -105,7 +105,7 @@ public class EnemyShooting : MonoBehaviour {
         laserShotLine.SetPosition(0, laserShotLine.transform.position);
 
         // Set the end position of the player's centre of mass.
-        laserShotLine.SetPosition(1, player.GetComponent<ThirdPersonCharacter>().head.position);
+        laserShotLine.SetPosition(1, player.GetComponent<PlayerControl>().head.position);
 
         // Turn on the line renderer.
         laserShotLine.enabled = true;

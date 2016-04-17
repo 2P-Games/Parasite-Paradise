@@ -1,4 +1,9 @@
-public GameObject textBox;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class Wall2Dialog : MonoBehaviour {
+
+    public GameObject textBox;
     public Text text;
     //public PlayerAttackScript player;
     public int line = 0;
@@ -42,7 +47,6 @@ public GameObject textBox;
         {
             //Finish and move on to scene.
             line--;
-        }
-        
-
+        }  
     }
+}
