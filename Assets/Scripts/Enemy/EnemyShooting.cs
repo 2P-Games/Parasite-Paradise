@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class EnemyShooting : MonoBehaviour {
+public class EnemyShooting : BasicObject {
 
     // The maximum potential damage per shot.
     public float maximumDamage = 120f;
@@ -24,10 +24,7 @@ public class EnemyShooting : MonoBehaviour {
     Light laserShotLight;
     // Reference to the sphere collider.				
     SphereCollider col;
-    // Reference to the player's transform.				
-    Transform player;
-    // Reference to the player's health.			
-    PlayerHealth playerHealth;
+ 
     // A bool to say whether or not the enemy is currently shooting.
     bool shooting;
     // Amount of damage that is scaled by the distance from the player.				
@@ -39,8 +36,6 @@ public class EnemyShooting : MonoBehaviour {
         laserShotLine = GetComponentInChildren<LineRenderer>();
         laserShotLight = laserShotLine.gameObject.GetComponent<Light>();
         col = GetComponent<SphereCollider>();
-        player = GameObject.FindGameObjectWithTag(Tags.player).transform;
-        playerHealth = player.gameObject.GetComponent<PlayerHealth>();
         hash = GameObject.FindGameObjectWithTag(Tags.gameController).GetComponent<HashIDs>();
 
         // The line renderer and light are off to start.
@@ -77,7 +72,7 @@ public class EnemyShooting : MonoBehaviour {
         float aimWeight = anim.GetFloat(hash.aimWeightFloat);
 
         // Set the IK position of the right hand to the player's centre.
-        anim.SetIKPosition(AvatarIKGoal.RightHand, player.GetComponent<PlayerControl>().head.position);
+        anim.SetIKPosition(AvatarIKGoal.RightHand, playerReference.GetComponent<PlayerControl>().head.position);
 
         // Set the weight of the IK compared to animation to that of the curve.
         anim.SetIKPositionWeight(AvatarIKGoal.RightHand, aimWeight);
@@ -88,13 +83,10 @@ public class EnemyShooting : MonoBehaviour {
         shooting = true;
 
         // The fractional distance from the player, 1 is next to the player, 0 is the player is at the extent of the sphere collider.
-        float fractionalDistance = (col.radius - Vector3.Distance(transform.position, player.GetComponent<PlayerControl>().head.position)) / col.radius;
+        float fractionalDistance = (col.radius - Vector3.Distance(transform.position, playerReference.GetComponent<PlayerControl>().head.position)) / col.radius;
 
         // The damage is the scaled damage, scaled by the fractional distance, plus the minimum damage.
         float damage = scaledDamage * fractionalDistance + minimumDamage;
-
-        // The player takes damage.
-        playerHealth.TakeDamage(damage);
 
         // Display the shot effects.
         ShotEffects();
@@ -105,7 +97,7 @@ public class EnemyShooting : MonoBehaviour {
         laserShotLine.SetPosition(0, laserShotLine.transform.position);
 
         // Set the end position of the player's centre of mass.
-        laserShotLine.SetPosition(1, player.GetComponent<PlayerControl>().head.position);
+        laserShotLine.SetPosition(1, playerReference.GetComponent<PlayerControl>().head.position);
 
         // Turn on the line renderer.
         laserShotLine.enabled = true;

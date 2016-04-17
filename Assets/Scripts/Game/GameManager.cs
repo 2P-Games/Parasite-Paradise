@@ -30,6 +30,8 @@ public class GameManager : BasicObject
         }
     }
 
+
+    // is the game paused
     private bool isPaused = false;
 
 }

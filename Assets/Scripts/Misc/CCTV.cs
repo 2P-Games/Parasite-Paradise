@@ -1,27 +1,21 @@
 using UnityEngine;
 using System.Collections;
 
-public class CCTV : MonoBehaviour {
+public class CCTV : BasicObject {
 
     public AudioClip servoSound;
     public float maxRotation = 75F;
     public float rotationSpeed = 15;
     public float trackPlayerSpeed = 4;
 
-	// Reference to the player.
-    GameObject player;				
-	// Reference to the global last sighting of the player.
-    LastPlayerSighting lastPlayerSighting;
     // The joint the camera rotates around.
     Transform joint;
     Quaternion initialRotation;
     bool lockedOnPlayer = false;
     float angle;
 
-	void Start() {
+	void Awake() {
 		// Setting up the references.
-		player = GameObject.FindGameObjectWithTag(Tags.player);
-		lastPlayerSighting = GameObject.FindGameObjectWithTag(Tags.gameController).GetComponent<LastPlayerSighting>();
         joint = transform.parent.parent;
         initialRotation = joint.rotation;
 
@@ -36,6 +30,7 @@ public class CCTV : MonoBehaviour {
     }
 
     void Update() {
+
         if (lockedOnPlayer) {
             return;
         }
@@ -47,23 +42,25 @@ public class CCTV : MonoBehaviour {
     }
 	
 	void OnTriggerStay(Collider other) {
+
 		// If the colliding gameobject is the player.
-		if (other.gameObject == player) {
+		if (other.gameObject == playerReference) {
             // Don't do anything unless we can see the player. He could be behind something.
-            Vector3 direction = player.transform.position - transform.position;
+            Vector3 direction = playerReference.transform.position - transform.position;
 
             RaycastHit hit;
             if (Physics.Raycast(transform.position, direction, out hit)) {
-                if (hit.transform.gameObject != player) {
+                if (hit.transform.gameObject != playerReference) {
                     return;
                 }
             }
 
-            lastPlayerSighting.lastPlayerPosition = player.transform.position;
+            // Sound alarm.
+            AlarmManager.Get().TurnOnAlarm(playerReference.transform.position);
  
             lockedOnPlayer = true;
 
-            Quaternion newRotation = Quaternion.LookRotation(player.transform.position - joint.position, Vector3.up);
+            Quaternion newRotation = Quaternion.LookRotation(playerReference.transform.position - joint.position, Vector3.up);
             newRotation.x = 0.0f;
             newRotation.z = 0.0f;
             if (Quaternion.Angle(initialRotation, newRotation) <= maxRotation) {
@@ -73,8 +70,9 @@ public class CCTV : MonoBehaviour {
 	}
 
     void OnTriggerExit(Collider other) {
+
 		// If the colliding gameobject is the player.
-        if (other.gameObject == player) {
+        if (other.gameObject.tag.Equals("Player")) {
             lockedOnPlayer = false;
         }
     }

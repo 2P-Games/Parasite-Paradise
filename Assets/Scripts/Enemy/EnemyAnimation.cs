@@ -1,17 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class EnemyAnimation : MonoBehaviour {
+public class EnemyAnimation : BasicObject {
 
     // an array of footstep sounds that will be randomly selected from.
     public AudioClip[] footstepSounds;
     // The number of degrees for which the rotation isn't controlled by Mecanim.
     public float deadZone = 5f;
 
-    // Reference to the player's transform.
-    Transform player;
-    // Reference to the EnemySight script.				
-    EnemySight enemySight;
     // Reference to the nav mesh agent.
     NavMeshAgent nav;
     // Reference to the Animator.			
@@ -26,8 +22,6 @@ public class EnemyAnimation : MonoBehaviour {
 
     void Awake() {
         // Setting up the references.
-        player = GameObject.FindGameObjectWithTag(Tags.player).transform;
-        enemySight = GetComponent<EnemySight>();
         audioSource = GetComponent<AudioSource>();
         nav = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
@@ -69,13 +63,13 @@ public class EnemyAnimation : MonoBehaviour {
         float speed;
         float angle;
 
-        // If the player is in sight...
-        if (enemySight.playerInShootingRange) {
+        // If the player is in sight... 
+        if (GetComponent<Enemy>().currentState == Enemy.BehaviorState.Alerted) {
             // ... the enemy should stop...
             speed = 0f;
 
             // ... and the angle to turn through is towards the player.
-            angle = FindAngle(transform.forward, player.position - transform.position, transform.up);
+            angle = FindAngle(transform.forward, playerReference.transform.position - transform.position, transform.up);
         }
         else {
             // Debug.

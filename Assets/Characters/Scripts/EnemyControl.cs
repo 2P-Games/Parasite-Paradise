@@ -15,8 +15,10 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 		private bool m_Attack;
 		private bool m_Alert;
 
-		private void Start()
+		private new void Start()
 		{
+            base.Start();
+
 			// get the transform of the main camera
 			if (Camera.main != null)
 			{
@@ -34,8 +36,10 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 		}
 
 
-		private void Update()
+		private new void Update()
 		{
+            base.Update();
+
 			if (!m_Jump)
 			{
 				m_Jump = CrossPlatformInputManager.GetButtonDown("Jump");

@@ -94,10 +94,6 @@ public class Player : MonoBehaviour {
         UnityEditorInternal.ComponentUtility.CopyComponent(enemyObject.GetComponent<SkinnedMeshRenderer>());
         UnityEditorInternal.ComponentUtility.PasteComponentValues(gameObject.GetComponent<SkinnedMeshRenderer>());
 
-        // for cubes/enemies without a skinned mesh renderer
-        UnityEditorInternal.ComponentUtility.CopyComponent(enemyObject.GetComponent<MeshRenderer>());
-        UnityEditorInternal.ComponentUtility.PasteComponentValues(gameObject.GetComponent<MeshRenderer>());
-
         // "kill" the enemy
         targetEnemy.TakeDamage(9999);
 
@@ -192,7 +188,7 @@ public class Player : MonoBehaviour {
     }
 
     [SerializeField]
-    private int health = 100;
+    protected int health = 100;
 
     [SerializeField]
     private float infectTimer = 0.0f;
@@ -203,7 +199,7 @@ public class Player : MonoBehaviour {
     public bool isPossessingEnemy = false;
 
     // if the controls need to be disabled for any reason, this can be turned off.
-    private bool controlsEnabled;
+    protected bool controlsEnabled;
 
     private List<GameObject> EnemiesInRange = new List<GameObject>();
 

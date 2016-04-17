@@ -15,33 +15,16 @@ public abstract class Enemy : BasicObject {
         base.Start();
         internalAttackTimer = 0.0f;
         this.currentState = BehaviorState.Passive;
-        this.arrayOfAttacks = this.gameObject.GetComponents<Attack>();
-        this.destinationPathNode = PathNodeLibrary.GetNearestPathNodeFromLocation(this.gameObject.transform.position);
-        this.visionRadius = this.GetComponent<SphereCollider>().radius;
+    }
+
+    protected virtual void Awake()
+    {
+        // Setting up the references.
+        nav = this.gameObject.GetComponent<NavMeshAgent>();
     }
 
     protected virtual void Update()
     {
-
-        /** Attacking */
-        if (this.CanAttack())
-        {
-            this.Attack();
-        }
-        else if (this.IsAttackOnCooldown())
-        {
-            this.internalAttackTimer -= Time.deltaTime;
-        }
-
-        /** Moving **/
-        if (this.CanMove())
-        {
-            this.Move();
-        }
-        else
-        {
-            this.moveDelay -= Time.deltaTime;
-        }
 
         /** If not passive, start counting down until becoming passive. **/
         if (stateTimer > 0.0f)
@@ -52,97 +35,101 @@ public abstract class Enemy : BasicObject {
         {
             this.currentState = BehaviorState.Passive;
             stateTimer = 0.0f;
+            playerHeard = false;
+            AlarmManager.Get().TurnOffAlarm();
         }
-    }
 
-    // virtual baseline move method 
-    public virtual void Move()
-    {
-        float step = Time.deltaTime * this.walkingSpeed;
-
-        switch (this.currentState) {
-            case BehaviorState.Passive:
-                this.transform.position = Vector3.MoveTowards(this.transform.position, this.destinationPathNode.transform.position, step);
-                break;
-            case BehaviorState.Alerted:
-                this.transform.position = Vector3.MoveTowards(this.transform.position, this.playerReference.transform.position, step);
-                break;
-            case BehaviorState.Restless:
-                this.transform.position = Vector3.MoveTowards(this.transform.position, this.destinationPathNode.transform.position, step);
-                break;
-        }
-    }
-
-    // virtual baseline attack method 
-    public virtual void Attack()
-    {
-
-        // first select an attack 
-        Attack attackToMake = this.SelectAttack();
-
-        // cancel attack if selected attack is out of range
-        if (!attackToMake.IsAttackInRange(this.gameObject, this.playerReference))
+        // Alerted = chasing
+        if(this.currentState == BehaviorState.Alerted)
         {
-            return; 
+            Chasing();
+        }
+        // Otherwise patrol.
+        else {
+            Patrolling();
         }
 
-        /** Attack is in range, let's attack */
+        if (AlarmManager.Get().isAlarmSounding)
         {
 
-            /** Play enemy's attack animation here */
+            // I am alert.
+            this.currentState = BehaviorState.Alerted;
+        }
 
-            if(attackToMake.attackType == global::Attack.RangeType.Melee)
-            {
-                // Melee attacks have no projectile, and thus presumably cannot be avoided if you are within range.
-                // CAN BE CHANGED
-                this.playerReference.GetComponent<Player>().TakeDamage(attackToMake.damage);
 
-            } else if(attackToMake.attackType == global::Attack.RangeType.Ranged)
+    }
+
+    void Patrolling()
+    {
+        if (patrolWayPoints.Length == 0)
+        {
+            return;
+        }
+
+        nav.Resume();
+
+        // Set an appropriate speed for the NavMeshAgent.
+        nav.speed = patrolSpeed;
+
+        // If near the next waypoint or there is no destination...
+        if (nav.destination == AlarmManager.Get().resetPosition || nav.remainingDistance < nav.stoppingDistance)
+        {
+            if (patrolTimer == 0)
             {
-                // creates the attack's prefab projectile and adds the attack's force vector as relative force.
-                // Note: The damage for RangeType.Ranged attacks is accounted for in the player's collision handling for projectiles.
-                // TODO: simple implementation for now, would like to add more variety to projectile attacks in the future.
-                GameObject projectileFired = (GameObject)Instantiate(attackToMake.AttackPrefab, this.gameObject.transform.position, Quaternion.identity);
-                projectileFired.GetComponent<Rigidbody>().AddForce((this.gameObject.transform.forward + attackToMake.adjustmentVector) * attackToMake.speed);
-            } else
-            {
-                // something is horribly wrong
+                patrolWaitTime = Random.Range(patrolMinWaitTime, patrolMaxWaitTime);
             }
 
-            /** Attack completed, add attack's delay to internal timer */
-            // Note: using '=' to overwrite any "over reduction" that might have occured while Update() was reducing timer.
-            this.internalAttackTimer = attackToMake.delay;
+            // ... increment the timer.
+            patrolTimer += Time.deltaTime;
 
-            /** Play attacking sound **/
-            gameObject.GetComponent<AudioSource>().PlayOneShot(attackToMake.attackSound);
+            // If the timer exceeds the wait time...
+            if (patrolTimer >= patrolWaitTime)
+            {
+                // ... increment the wayPointIndex.
+                if (wayPointIndex == patrolWayPoints.Length - 1)
+                {
+                    wayPointIndex = 0;
+                }
+                else {
+                    wayPointIndex++;
+                }
 
+                // Reset the timer.
+                patrolTimer = 0;
+            }
         }
+        else {
+            // If not near a destination, reset the timer.
+            patrolTimer = 0;
+        }
+
+        // Set the destination to the patrolWayPoint.
+        nav.destination = patrolWayPoints[wayPointIndex].position;
+    }
+
+    void Chasing()
+    {
+        nav.Resume();
+
+        // Either use the global alarm position or our own position for the player.
+        // Create a vector from the enemy to the last known position of the player.
+        Vector3 sightingDeltaPos = AlarmManager.Get().lastPlayerPosition - transform.position;
+
+        // If the the last personal sighting of the player is not close...
+        if (sightingDeltaPos.sqrMagnitude > 4f)
+        {
+            // ... set the destination for the NavMeshAgent to the last personal sighting of the player.
+            nav.destination = AlarmManager.Get().lastPlayerPosition;
+        }
+
+        // Set the appropriate speed for the NavMeshAgent.
+        nav.speed = chaseSpeed;
     }
 
     // simple method to rotate the transform to look at the player's transform
     protected void LookAtPlayer()
     {
         this.transform.LookAt(this.playerReference.transform);
-    }
-
-    // returns true if this enemy has attacked recently, false otherwise.
-    protected bool IsAttackOnCooldown()
-    {
-        return this.internalAttackTimer > 0.0f;
-    }
-
-    // interfacing function call to determine if this enemy can attack
-    protected bool CanAttack()
-    {
-        return !IsAttackOnCooldown() && // has an attack been made recently
-            this.attackEnabled && // not being infected
-            arrayOfAttacks.Length > 0; // Do I have any possible attacks to make
-    }
-
-    // randomly select an attack to perform from array
-    protected Attack SelectAttack()
-    {
-        return arrayOfAttacks[Random.Range(0, arrayOfAttacks.Length)];
     }
 
     // simple health reduction
@@ -202,20 +189,6 @@ public abstract class Enemy : BasicObject {
         return movementEnabled && moveDelay <= 0.0f;
     }
 
-    // called when the enemy reaches its destination path node from moving
-    public void ReachedPathNode()
-    {
-        switch (this.currentState) {
-            case BehaviorState.Passive:
-            case BehaviorState.Alerted:
-            this.moveDelay += Random.Range(this.PassiveMaxMovementDelay / 2.0f, this.PassiveMaxMovementDelay);
-                break;
-            case BehaviorState.Restless:
-                this.moveDelay += Random.Range(this.RestlessMaxMovementDelay / 2.0f, this.RestlessMaxMovementDelay);
-                break;
-        }
-    }
-
     // check things that enter vision
     void OnTriggerEnter(Collider collider)
     {
@@ -237,6 +210,7 @@ public abstract class Enemy : BasicObject {
                     this.currentState = BehaviorState.Alerted;
                     stateTimer = 20.0f;
                 }
+
             }
 
             // Object in view is another enemy
@@ -245,13 +219,26 @@ public abstract class Enemy : BasicObject {
                 // dead body checking
                 if(collider.gameObject.GetComponent<Enemy>().IsDead() && this.currentState != BehaviorState.Alerted)
                 {
-                    // If not Alerted become restless  and increase state timer.
+                    // If not Alerted become restless and increase state timer.
                     this.currentState = BehaviorState.Restless;
                     stateTimer = 45.0f;
                 }
             }
         }
- 
+
+        // hearing detection
+        if (playerReference.GetComponent<PlayerControl>().state == "run")
+        {
+            if (!playerHeard && this.currentState == BehaviorState.Passive)
+            {
+                playerHeard = true;
+
+                // If not Alerted become restless and increase state timer.
+                this.currentState = BehaviorState.Restless;
+                stateTimer += 15.0f;
+            }
+        }
+
     }
 
     void OnTriggerStay(Collider collider)
@@ -269,9 +256,15 @@ public abstract class Enemy : BasicObject {
 
     void OnTriggerExit(Collider collider)
     {
-        
+
+        if (collider.tag.Equals("Player"))
+        {
+            // set player last spotted
+            AlarmManager.Get().lastPlayerPosition = collider.transform.position;
+        }
     }
 
+    // the time it takes for the player to infect this enemy
     public float timeToInfect;
 
     // internal timer which will count down;
@@ -286,9 +279,30 @@ public abstract class Enemy : BasicObject {
     [SerializeField]
     protected float moveDelay;
 
+    // angle of the vision cone
     public float visionAngle;
 
-    private float visionRadius;
+    // The nav mesh agent's speed when patrolling.
+    public float patrolSpeed = 2f;
+
+    // The nav mesh agent's speed when chasing.			
+    public float chaseSpeed = 5f;
+
+    // The amount of time to wait when the patrol way point is reached.			
+    public float patrolMinWaitTime = 1f;
+    public float patrolMaxWaitTime = 5f;
+
+    // An array of transforms for the patrol route.			
+    public Transform[] patrolWayPoints;
+
+    // A timer for the patrolWaitTime.				
+    float patrolTimer;
+
+    // A counter for the way point array.				
+    int wayPointIndex;
+
+    // wait time between patrol points
+    float patrolWaitTime;
 
     [SerializeField]
     protected float PassiveMaxMovementDelay;
@@ -303,11 +317,10 @@ public abstract class Enemy : BasicObject {
     // can this enemy currently attack
     protected bool attackEnabled = true;
 
-    // array of possible attacks that this enemy can make
-    protected Attack[] arrayOfAttacks;
+    protected bool playerHeard;
 
-    // path node to walk to next when deciding to move
-    public PathNode destinationPathNode;
+    // Reference to the nav mesh agent.				
+    protected NavMeshAgent nav;
 
     // walking speed of this enemy
     [SerializeField]

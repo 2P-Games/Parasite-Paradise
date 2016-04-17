@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class PlayerControl : MonoBehaviour {
+public class PlayerControl : Player {
 
 	// The guards and the camera aim at this.
 	public Transform head;
@@ -9,6 +9,7 @@ public class PlayerControl : MonoBehaviour {
 	public AudioClip[] footstepSounds;
 	public float movingTurnSpeed = 360;
 	public float stationaryTurnSpeed = 180;
+
 	[HideInInspector]
 	public string state = "sneak";
 
@@ -35,8 +36,6 @@ public class PlayerControl : MonoBehaviour {
 	AudioSource audioSource;
 	bool playedLeftFootSound = false;
 	bool playedRightFootSound = false;
-	PlayerHealth health;
-	bool disabled = false;
 
 	void Awake() {
 		cam = Camera.main.transform;
@@ -44,7 +43,6 @@ public class PlayerControl : MonoBehaviour {
 		animator = GetComponent<Animator>();
 		rigidbody = GetComponent<Rigidbody>();
 		capsule = GetComponent<CapsuleCollider>();
-		health = GetComponent<PlayerHealth>();
 	}
 
 	void Start() {
@@ -54,15 +52,10 @@ public class PlayerControl : MonoBehaviour {
 	}
 
 	void Update() {
-		if (disabled) {
+
+		if (!this.controlsEnabled) {
 			return;
 		}
-
-		if (health.playerDead) {
-			return;
-		}
-
-		state = "sneak";
 
 		// read inputs
 		h = Input.GetAxis("Horizontal");
@@ -92,16 +85,14 @@ public class PlayerControl : MonoBehaviour {
 
 	// Fixed update is called in sync with physics
 	void FixedUpdate() {
-		if (disabled) {
-			return;
-		}
 
-		if (health.playerDead) {
-			return;
-		}
+        if (!this.controlsEnabled)
+        {
+            return;
+        }
 
-		// calculate move direction to pass to character
-		if (cam != null) {
+        // calculate move direction to pass to character
+        if (cam != null) {
 			// calculate camera relative direction to move:
 			camForward = Vector3.Scale(cam.forward, new Vector3(1, 0, 1)).normalized;
 			move = v * camForward + h * cam.right;
@@ -116,8 +107,8 @@ public class PlayerControl : MonoBehaviour {
 	}
 
 	public void Disable(bool value) {
-		disabled = value;
-		if (disabled) {
+		this.controlsEnabled = value;
+		if (this.controlsEnabled) {
 			v = 0;
 			h = 0;
 			move = Vector3.zero;
