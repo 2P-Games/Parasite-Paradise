@@ -183,7 +183,7 @@ public class Player : MonoBehaviour {
         {
             case "Enemy":
                 // collision with the collider of the enemy gameObject
-                this.TakeDamage(50);
+                //this.TakeDamage(50);
                 break;
             default:
                 // walls, etc.
