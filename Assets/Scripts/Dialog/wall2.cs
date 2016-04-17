@@ -1,10 +1,4 @@
-using UnityEngine;
-using UnityEngine.UI;
-using System.Collections;
-
-public class Wall2Dialog : MonoBehaviour {
-
-	public GameObject textBox;
+public GameObject textBox;
     public Text text;
     //public PlayerAttackScript player;
     public int line = 0;
@@ -52,4 +46,3 @@ public class Wall2Dialog : MonoBehaviour {
         
 
     }
-}

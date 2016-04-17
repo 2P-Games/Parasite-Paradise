@@ -1,10 +1,4 @@
-using UnityEngine;
-using UnityEngine.UI;
-using System.Collections;
-
-public class FinalDialog : MonoBehaviour {
-	
-	public GameObject textBox;
+public GameObject textBox;
     public Text text;
     //public PlayerAttackScript player;
     public int line = 0;
@@ -55,6 +49,6 @@ public class FinalDialog : MonoBehaviour {
             //Finish and move on to scene.
             line--;
         }
+        
 
     }
-}

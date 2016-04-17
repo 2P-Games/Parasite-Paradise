@@ -29,7 +29,6 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 		CapsuleCollider m_Capsule;
 		bool m_Crouching;
 		bool m_Attacking;
-		bool m_Infecting;
 
 
 		void Start()
@@ -45,7 +44,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 		}
 
 
-		public void Move(Vector3 move, bool crouch, bool attack, bool infect, bool jump)
+		public void Move(Vector3 move, bool crouch, bool attack, bool jump)
 		{
 
 			// convert the world relative moveInput vector into a local-relative
@@ -70,7 +69,6 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 				HandleAirborneMovement();
 			}
 			m_Attacking = attack;
-			m_Infecting = infect;
 
 			ScaleCapsuleForCrouching(crouch);
 			PreventStandingInLowHeadroom();
@@ -126,11 +124,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 			m_Animator.SetFloat("Turn", m_TurnAmount, 0.1f, Time.deltaTime);
 			m_Animator.SetBool("Crouch", m_Crouching);
 			m_Animator.SetBool("OnGround", m_IsGrounded);
-
-			m_Animator.SetLayerWeight (1, 1f);
-			m_Animator.SetBool("Attack", m_Attacking);
-			m_Animator.SetBool("Infect", m_Infecting);
-
+			//m_Animator.SetBool("BasicAttack", m_Attacking);
 			if (!m_IsGrounded)
 			{
 				m_Animator.SetFloat("Jump", m_Rigidbody.velocity.y);

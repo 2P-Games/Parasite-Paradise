@@ -237,13 +237,7 @@ ModelImporter:
     resampleRotations: 1
     optimizeGameObjects: 0
     motionNodeName: 
-    animationImportErrors: '
-
-      Imported file ''MCSMaleLite'' conversion failed: Required human bone ''Hips''
-      not found
-
-
-'
+    animationImportErrors: 
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
@@ -729,19 +723,14 @@ ModelImporter:
       rotation: {x: 7.780956e-20, y: -0.0000000014662414, z: 0.000000048747083, w: 1}
       scale: {x: 1, y: 1, z: 1}
       transformModified: 1
-    - name: G2FSimplifiedEyes
-      position: {x: -0.000000058300582, y: -0.0005520549, z: 0.006076505}
-      rotation: {x: -7.780956e-20, y: 0.0000000014662414, z: -0.000000048747083, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
     - name: G2FSimplifiedEyes_394.Shape_LOD0
-      position: {x: 0.00000005826458, y: 0.0005520549, z: -0.006076505}
-      rotation: {x: 7.780956e-20, y: -0.0000000014662414, z: 0.000000048747083, w: 1}
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
       scale: {x: 1, y: 1, z: 1}
       transformModified: 1
     - name: G2FSimplifiedEyes_394.Shape_LOD1
-      position: {x: 0.00000005826458, y: 0.0005520549, z: -0.006076505}
-      rotation: {x: 7.780956e-20, y: -0.0000000014662414, z: 0.000000048747083, w: 1}
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
       scale: {x: 1, y: 1, z: 1}
       transformModified: 1
     - name: Genesis2Male.Shape_LOD0
@@ -889,6 +878,71 @@ ModelImporter:
       rotation: {x: -1.9515637e-18, y: 0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
       transformModified: 1
+    - name: neck
+      position: {x: -0, y: 0.27522698, z: 0.0044862796}
+      rotation: {x: -0, y: 3.5882718e-19, z: 9.424413e-28, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: head
+      position: {x: -0, y: 0.08620804, z: 0.021989638}
+      rotation: {x: -1.7347235e-18, y: 0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: rEye
+      position: {x: 0.031259697, y: 0.058587033, z: 0.07774242}
+      rotation: {x: -1.2143064e-17, y: 0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: lEye
+      position: {x: -0.031259697, y: 0.058587033, z: 0.07774242}
+      rotation: {x: -1.2143064e-17, y: 0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: upperJaw
+      position: {x: -0, y: 0.009907073, z: 0.021152616}
+      rotation: {x: -1.2143064e-17, y: 0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: lowerJaw
+      position: {x: -0, y: 0.00914505, z: 0.01893276}
+      rotation: {x: 2.7755576e-17, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: tongueBase
+      position: {x: -0, y: -0.045127105, z: 0.03156553}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: tongue01
+      position: {x: -0, y: 0.022294005, z: 0.00927356}
+      rotation: {x: 5.551115e-17, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: tongue02
+      position: {x: -0, y: 0.003113098, z: 0.0071089696}
+      rotation: {x: 1.2490008e-16, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: tongue03
+      position: {x: -0, y: 0.0012348938, z: 0.0074511003}
+      rotation: {x: 1.7347236e-17, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: tongue04
+      position: {x: -0, y: 0.00038208006, z: 0.007552228}
+      rotation: {x: -5.2041704e-17, y: 0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: tongue05
+      position: {x: -0, y: -0.000052948, z: 0.006462493}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: tongueTip
+      position: {x: -0, y: -0.000037994385, z: 0.005923786}
+      rotation: {x: -1.7347235e-16, y: 0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
     - name: rCollar
       position: {x: 0.0178918, y: 0.19719505, z: 0.0472972}
       rotation: {x: -0.000045710145, y: -0.015987039, z: 0.002511865, w: 0.9998691}
@@ -908,11 +962,6 @@ ModelImporter:
       position: {x: 0.22249061, y: -0.0018879699, z: 0.104079835}
       rotation: {x: 0.15691476, y: 0.064212225, z: 0.013630464, w: 0.9854282}
       scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
-    - name: rHandAttachmentPointR
-      position: {x: 0, y: 0, z: 0}
-      rotation: {x: 0, y: 0, z: 0, w: 1}
-      scale: {x: 0.9999999, y: 0.9999999, z: 1}
       transformModified: 1
     - name: rThumb1
       position: {x: 0.013792572, y: -0.0033509827, z: 0.03184843}
@@ -1019,11 +1068,6 @@ ModelImporter:
       rotation: {x: 0.15691476, y: -0.064212225, z: -0.013630464, w: 0.9854282}
       scale: {x: 1, y: 1, z: 1}
       transformModified: 1
-    - name: lHandAttachmentPointL
-      position: {x: -0, y: 0, z: 0}
-      rotation: {x: 0, y: 0, z: 0, w: 1}
-      scale: {x: 1, y: 0.9999999, z: 1}
-      transformModified: 1
     - name: lThumb1
       position: {x: -0.013792572, y: -0.0033509827, z: 0.03184843}
       rotation: {x: -0.1595912, y: -0.12482835, z: -0.060739573, w: 0.97737366}
@@ -1117,71 +1161,6 @@ ModelImporter:
     - name: lPectoral
       position: {x: -0.03451847, y: 0.044695966, z: -0.043227483}
       rotation: {x: -1.3877788e-17, y: 4.814825e-35, z: -3.469447e-18, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
-    - name: neck
-      position: {x: -0, y: 0.27522698, z: 0.0044862796}
-      rotation: {x: -0, y: 3.5882718e-19, z: 9.424413e-28, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
-    - name: head
-      position: {x: -0, y: 0.08620804, z: 0.021989638}
-      rotation: {x: -1.7347235e-18, y: 0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
-    - name: upperJaw
-      position: {x: -0, y: 0.009907073, z: 0.021152616}
-      rotation: {x: -1.2143064e-17, y: 0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
-    - name: lowerJaw
-      position: {x: -0, y: 0.00914505, z: 0.01893276}
-      rotation: {x: 2.7755576e-17, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
-    - name: tongueBase
-      position: {x: -0, y: -0.045127105, z: 0.03156553}
-      rotation: {x: 0, y: 0, z: 0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
-    - name: tongue01
-      position: {x: -0, y: 0.022294005, z: 0.00927356}
-      rotation: {x: 5.551115e-17, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
-    - name: tongue02
-      position: {x: -0, y: 0.003113098, z: 0.0071089696}
-      rotation: {x: 1.2490008e-16, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
-    - name: tongue03
-      position: {x: -0, y: 0.0012348938, z: 0.0074511003}
-      rotation: {x: 1.7347236e-17, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
-    - name: tongue04
-      position: {x: -0, y: 0.00038208006, z: 0.007552228}
-      rotation: {x: -5.2041704e-17, y: 0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
-    - name: tongue05
-      position: {x: -0, y: -0.000052948, z: 0.006462493}
-      rotation: {x: 0, y: 0, z: 0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
-    - name: tongueTip
-      position: {x: -0, y: -0.000037994385, z: 0.005923786}
-      rotation: {x: -1.7347235e-16, y: 0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
-    - name: rEye
-      position: {x: 0.031259697, y: 0.058587033, z: 0.07774242}
-      rotation: {x: -1.2143064e-17, y: 0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
-    - name: lEye
-      position: {x: -0.031259697, y: 0.058587033, z: 0.07774242}
-      rotation: {x: -1.2143064e-17, y: 0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
       transformModified: 1
     armTwist: 0.5
