@@ -3,8 +3,8 @@ using System.Collections;
 
 public class Rescue : MonoBehaviour {
 
-	// Audioclip to play when the key is picked up.
-	public AudioClip rescue;							
+	// Audioclip to play when rescued.
+	//public AudioClip rescue;							
 
 	// Reference to the player.
 	private GameObject player;	
@@ -22,16 +22,14 @@ public class Rescue : MonoBehaviour {
 	}
 
 	void Update(){
-		if (deadleader) {
-			anim.SetBool ("deadleader", true);
-		}
+		
 	}
 
 	void OnTriggerEnter(Collider other) {
 		// If the colliding gameobject is the player...
-		if(other.gameObject == player && deadleader) {
+		if(other.gameObject == player) {
 			// ... play the clip at the position of the key...
-			//AudioManager.instance.PlaySoundAtPosition(keyGrab, transform.position);
+			//AudioManager.instance.PlaySoundAtPosition(audioclip, transform.position);
 
 			// ... the player has a key ...
 			playerInventory.numberOfParasites++;
