@@ -20,7 +20,7 @@ public class Player : MonoBehaviour {
     void Update () {
 
         // attempt to acquire an enemy target once
-        if(Input.GetKeyDown(KeyCode.I))
+        if(Input.GetKeyDown(KeyCode.I) || Input.GetKeyDown(KeyCode.Joystick1Button7))
         {
 
             // if no enemies are close enough or is already infecting an enemy, cannot possess new target.
@@ -52,7 +52,7 @@ public class Player : MonoBehaviour {
         }
 
         // continue to hold down spacebar to fill infection bar
-        if (Input.GetKey(KeyCode.I))
+        if (Input.GetKey(KeyCode.I) || Input.GetKey(KeyCode.Joystick1Button7))
         {
 
             // if we currently are not possessing an enemy, and a target has been successfully selected, begin infection.
@@ -71,7 +71,7 @@ public class Player : MonoBehaviour {
             }
         }
 
-        if(Input.GetKeyUp(KeyCode.I))
+        if(Input.GetKeyUp(KeyCode.I) || Input.GetKeyUp(KeyCode.Joystick1Button7))
         {
             if (this.infectTimer > 0.0f)
             {
@@ -190,7 +190,6 @@ public class Player : MonoBehaviour {
     [SerializeField]
     protected int health = 100;
 
-    [SerializeField]
     private float infectTimer = 0.0f;
 
     private Enemy infectionTarget;
