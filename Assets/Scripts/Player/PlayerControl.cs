@@ -26,7 +26,7 @@ public class PlayerControl : Player {
 	bool run;
 	new Rigidbody rigidbody;
 	Animator animator;
-	float moveSpeedMultiplier = 1f;
+	float moveSpeedMultiplier = 20f;
 	float animSpeedMultiplier = 1f;
 	float turnAmount;
 	float forwardAmount;
