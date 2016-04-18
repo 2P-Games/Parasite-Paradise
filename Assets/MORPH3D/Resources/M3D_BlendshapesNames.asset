@@ -126,11 +126,11 @@ MonoBehaviour:
   - _dazName: Genesis2Female__PHMFaceYoung
     _ID: PHMFaceYoung
     Label: Face Young
-  - _dazName: Genesis2Female__FBMGoblin
-    _ID: FBMGoblin
-    Label: Goblin
   - _dazName: Genesis2Female__FHMGoblin
     _ID: FHMGoblin
+    Label: Goblin
+  - _dazName: Genesis2Female__FBMGoblin
+    _ID: FBMGoblin
     Label: Goblin
   - _dazName: Genesis2Female__FHMHag
     _ID: FHMHag
@@ -264,11 +264,11 @@ MonoBehaviour:
   - _dazName: Genesis2Male__FHMWarlock
     _ID: FHMWarlock
     Label: Warlock
-  - _dazName: Genesis2Male__FHMWizard
-    _ID: FHMWizard
-    Label: Wizard
   - _dazName: Genesis2Male__FBMWizard
     _ID: FBMWizard
+    Label: Wizard
+  - _dazName: Genesis2Male__FHMWizard
+    _ID: FHMWizard
     Label: Wizard
   - _dazName: Genesis2Female__Youth_Posture
     _ID: Youth_Posture

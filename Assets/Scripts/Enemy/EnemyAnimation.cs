@@ -70,7 +70,8 @@ public class EnemyAnimation : BasicObject {
 
             // ... and the angle to turn through is towards the player.
             angle = FindAngle(transform.forward, playerReference.transform.position - transform.position, transform.up);
-        }
+			anim.SetBool ("Alerted", true);
+		}
         else {
             // Debug.
             //print(nav.hasPath + " | " + nav.desiredVelocity + " | " + nav.destination);
@@ -87,6 +88,7 @@ public class EnemyAnimation : BasicObject {
                 transform.LookAt(transform.position + nav.desiredVelocity);
                 angle = 0f;
             }
+			anim.SetBool ("Alerted", false);
         }
 
         // Call the Setup function of the helper class with the given parameters.
