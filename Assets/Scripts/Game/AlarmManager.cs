@@ -4,15 +4,9 @@ using System.Collections;
 public class AlarmManager : MonoBehaviour
 {
 
-    public static AlarmManager Singleton;
     public static AlarmManager Get()
     {
-        if(!Singleton)
-        {
-            AlarmManager.Singleton = new AlarmManager();
-        }
-
-        return Singleton;
+        return GameObject.Find("Alarm Manager").GetComponent<AlarmManager>();
     }
 
     public bool isAlarmSounding;

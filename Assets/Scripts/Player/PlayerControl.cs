@@ -37,21 +37,24 @@ public class PlayerControl : Player {
 	bool playedLeftFootSound = false;
 	bool playedRightFootSound = false;
 
-	void Awake() {
-		cam = Camera.main.transform;
+	new void Awake() {
+        base.Awake();
+        cam = Camera.main.transform;
 		audioSource = GetComponent<AudioSource>();
 		animator = GetComponent<Animator>();
 		rigidbody = GetComponent<Rigidbody>();
 		capsule = GetComponent<CapsuleCollider>();
 	}
 
-	void Start() {
+	new void Start() {
+        base.Start();
 		capsuleHeight = capsule.height;
 		capsuleCenter = capsule.center;
 		rigidbody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
 	}
 
-	void Update() {
+	new void Update() {
+        base.Update();
 
 		if (!this.controlsEnabled) {
 			return;

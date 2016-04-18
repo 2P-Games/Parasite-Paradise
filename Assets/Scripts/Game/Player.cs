@@ -5,26 +5,27 @@ using System.Collections.Generic;
 public class Player : MonoBehaviour {
 
 	private Animator m_Animator;
-    void Start()
+
+    protected virtual void Start()
     {
         this.controlsEnabled = true;
         UIUpdater.UpdateHealthBar(this.health);
     }
 
-	void Awake()
+    protected virtual void Awake()
 	{
 		m_Animator = this.gameObject.GetComponent<Animator>();
 	}
 
     // Update is called once per frame
-    void Update () {
+    protected virtual void Update () {
 
         // attempt to acquire an enemy target once
-        if(Input.GetKeyDown(KeyCode.I))
+        if(Input.GetKeyDown(KeyCode.I) || Input.GetKeyDown(KeyCode.Joystick1Button7))
         {
 
             // if no enemies are close enough or is already infecting an enemy, cannot possess new target.
-            if(EnemiesInRange.Capacity == 0 || isPossessingEnemy)
+            if(EnemiesInRange.Count == 0 || isPossessingEnemy)
             {
                 return;
             }
@@ -52,7 +53,7 @@ public class Player : MonoBehaviour {
         }
 
         // continue to hold down spacebar to fill infection bar
-        if (Input.GetKey(KeyCode.I))
+        if (Input.GetKey(KeyCode.I) || Input.GetKey(KeyCode.Joystick1Button7))
         {
 
             // if we currently are not possessing an enemy, and a target has been successfully selected, begin infection.
@@ -71,7 +72,7 @@ public class Player : MonoBehaviour {
             }
         }
 
-        if(Input.GetKeyUp(KeyCode.I))
+        if(Input.GetKeyUp(KeyCode.I) || Input.GetKeyUp(KeyCode.Joystick1Button7))
         {
             if (this.infectTimer > 0.0f)
             {
@@ -90,12 +91,14 @@ public class Player : MonoBehaviour {
 
         GameObject enemyObject = targetEnemy.gameObject;
 
-        // steal the mesh to make it look like the enemy
-        UnityEditorInternal.ComponentUtility.CopyComponent(enemyObject.GetComponent<SkinnedMeshRenderer>());
-        UnityEditorInternal.ComponentUtility.PasteComponentValues(gameObject.GetComponent<SkinnedMeshRenderer>());
+        // disable enemy components
+        targetEnemy.GetComponent<Enemy>().enabled = false;
+        targetEnemy.GetComponent<EnemyAnimation>().enabled = false;
 
-        // "kill" the enemy
-        targetEnemy.TakeDamage(9999);
+        // copy this player script to enemy
+        enemyObject.AddComponent<PlayerControl>();
+        UnityEditorInternal.ComponentUtility.CopyComponent(this);
+        UnityEditorInternal.ComponentUtility.PasteComponentValues(enemyObject.GetComponent<PlayerControl>());
 
         // reset timers
         this.infectTimer = 0.0f;
@@ -190,7 +193,6 @@ public class Player : MonoBehaviour {
     [SerializeField]
     protected int health = 100;
 
-    [SerializeField]
     private float infectTimer = 0.0f;
 
     private Enemy infectionTarget;
