@@ -28,8 +28,7 @@ class VolundMultiStandardShaderGUI : ShaderGUI
 		public static GUIContent[] uvSetOptions = new GUIContent[] { new GUIContent("UV channel 0"), new GUIContent("UV channel 1") };
 
 		public static string emptyTootip = "";
-		public static GUIContent albedoText = new GUIContent("Albedo", "Albedo (RGB) - no Transparency-");
-		public static GUIContent alphaText = new GUIContent("Alpha", "Transparency (A) in B&W");
+		public static GUIContent albedoText = new GUIContent("Albedo", "Albedo (RGB) and Transparency (A)");
 		public static GUIContent alphaCutoffText = new GUIContent("Alpha Cutoff", "Threshold for alpha cutoff");
 		public static GUIContent specularMapText = new GUIContent("Specular", "Specular (RGB) and Smoothness (A)");
 		public static GUIContent metallicMapText = new GUIContent("Metallic", "Metallic (R) and Smoothness (A)");
@@ -58,7 +57,6 @@ class VolundMultiStandardShaderGUI : ShaderGUI
 	MaterialProperty blendMode = null;
 	MaterialProperty cullMode = null;
 	MaterialProperty albedoMap = null;
-	MaterialProperty alphaMap = null;
 	MaterialProperty albedoColor = null;
 	MaterialProperty alphaCutoff = null;
 	MaterialProperty specularMap = null;
@@ -97,7 +95,6 @@ class VolundMultiStandardShaderGUI : ShaderGUI
 		blendMode = FindProperty ("_Mode", props);
 		cullMode = FindProperty ("_CullMode", props, false);
 		albedoMap = FindProperty ("_MainTex", props);
-		alphaMap = FindProperty ("_AlphaTex", props);
 		albedoColor = FindProperty ("_Color", props);
 		alphaCutoff = FindProperty ("_Cutoff", props);
 		specularMap = FindProperty ("_SpecGlossMap", props, false);
@@ -148,8 +145,8 @@ class VolundMultiStandardShaderGUI : ShaderGUI
 		Material material = materialEditor.target as Material;
 
 		ShaderPropertiesGUI (material);
-        DoImmediateHair(materialEditor, props);
-
+		DoImmediateMaskyMix (materialEditor, props);
+		DoImmediateMeta (materialEditor, props);
 		// Make sure that needed keywords are set up if we're switching some existing
 		// material to a standard shader.
 		if (m_FirstTimeApply)
@@ -208,37 +205,47 @@ class VolundMultiStandardShaderGUI : ShaderGUI
 		{
 			foreach (var obj in blendMode.targets)
 				MaterialChanged((Material)obj, m_WorkflowMode);
-		}
+		}		
 	}
 
-    void DoImmediateHair(MaterialEditor materialEditor, MaterialProperty[] props)
-    {
-        if (FindProperty("_KKFlowMap", props, false) != null)
-        {
-            GUILayout.Label("Hair settings", EditorStyles.boldLabel);
-            ImmediateProperty("_KKFlowMap", materialEditor, props);
-            ImmediateProperty("_KKReflectionSmoothness", materialEditor, props);
-            ImmediateProperty("_KKReflectionGrayScale", materialEditor, props);
-            ImmediateProperty("_KKPrimarySpecularColor", materialEditor, props);
-            ImmediateProperty("_KKPrimarySpecularExponent", materialEditor, props);
-            ImmediateProperty("_KKPrimaryRootShift", materialEditor, props);
-            ImmediateProperty("_KKSecondarySpecularColor", materialEditor, props);
-            ImmediateProperty("_KKSecondarySpecularExponent", materialEditor, props);
-            ImmediateProperty("_KKSecondaryRootShift", materialEditor, props);
-            ImmediateProperty("_KKSpecularMixDirectFactors", materialEditor, props);
-            ImmediateProperty("_KKSpecularMixIndirectFactors", materialEditor, props);
-
-        }
-    }
-
-    void ImmediateProperty(string name, MaterialEditor materialEditor, MaterialProperty[] props)
-    {
-        var p = FindProperty(name, props);
-        if (p.type == MaterialProperty.PropType.Texture)
-            materialEditor.TexturePropertySingleLine(new GUIContent(p.displayName), p);
-        else
-            materialEditor.ShaderProperty(p, p.displayName);
-    }
+	void DoImmediateMaskyMix (MaterialEditor materialEditor, MaterialProperty[] props) {
+		if(FindProperty("_MaskyMixAlbedo", props, false) != null) {
+			GUILayout.Label("Masky Mix Additions", EditorStyles.boldLabel);
+			ImmediateProperty("_MaskyMixAlbedo",			materialEditor, props);
+			ImmediateProperty("_MaskyMixColor",				materialEditor, props);
+			ImmediateProperty("_MaskyMixSpecColor",			materialEditor, props);
+			ImmediateProperty("_MaskyMixUVTile",			materialEditor, props);
+			ImmediateProperty("_MaskyMixBumpMap",			materialEditor, props);
+			ImmediateProperty("_MaskyMixBumpScale",			materialEditor, props);
+			ImmediateProperty("_MaskyMixMask",				materialEditor, props);
+			ImmediateProperty("_MaskyMixMaskTile",			materialEditor, props);
+			ImmediateProperty("_MaskyMixMaskFalloff",		materialEditor, props);
+			ImmediateProperty("_MaskyMixMaskThresholdLow",	materialEditor, props);
+			ImmediateProperty("_MaskyMixMaskThresholdHi",	materialEditor, props);
+			if(ImmediateProperty("_MaskyMixWorldDirection",	materialEditor, props)) {
+				var p = FindProperty("_MaskyMixWorldDirection", props);
+				var v = (Vector3)p.vectorValue;
+				p.vectorValue = v.sqrMagnitude > 0.0001f ? v.normalized : Vector3.up;
+			}
+		}
+	}
+	void DoImmediateMeta (MaterialEditor materialEditor, MaterialProperty[] props) {
+		if(FindProperty("_MetaAlbedoDesaturation", props, false) != null) {
+			GUILayout.Label("Meta Additions", EditorStyles.boldLabel);
+			ImmediateProperty("_MetaAlbedoDesaturation",materialEditor, props);
+			ImmediateProperty("_MetaAlbedoTint",		materialEditor, props);
+			ImmediateProperty("_MetaAlbedoAdd",			materialEditor, props);
+		}
+	}
+	bool ImmediateProperty(string name, MaterialEditor materialEditor, MaterialProperty[] props) {
+		EditorGUI.BeginChangeCheck();
+		var p = FindProperty(name, props);
+		if(p.type == MaterialProperty.PropType.Texture)
+			materialEditor.TexturePropertySingleLine(new GUIContent(p.displayName), p);
+		else
+			materialEditor.ShaderProperty(p, p.displayName);
+		return EditorGUI.EndChangeCheck();
+	}
 
 	void CullModePopup()
 	{
@@ -317,7 +324,6 @@ class VolundMultiStandardShaderGUI : ShaderGUI
 	void DoAlbedoArea(Material material)
 	{
 		m_MaterialEditor.TexturePropertySingleLine(Styles.albedoText, albedoMap, albedoColor);
-		m_MaterialEditor.TexturePropertySingleLine(Styles.alphaText, alphaMap);
 		if (((BlendMode)material.GetFloat("_Mode") == BlendMode.Cutout))
 		{
 			m_MaterialEditor.ShaderProperty(alphaCutoff, Styles.alphaCutoffText.text, MaterialEditor.kMiniTextureFieldLabelIndentLevel+1);
@@ -452,8 +458,8 @@ class VolundMultiStandardShaderGUI : ShaderGUI
 		// Note: keywords must be based on Material value not on MaterialProperty due to multi-edit & material animation
 		// (MaterialProperty value might come from renderer material property block)
 		SetKeyword (material, "_NORMALMAP", material.GetTexture ("_BumpMap") || material.GetTexture ("_DetailNormalMap"));
-		SetKeyword (material, "ORTHONORMALIZE_TANGENT_BASE", material.HasProperty("__orthonormalize") && material.GetFloat("__orthonormalize") > 0.5f);
-		SetKeyword (material, "SMOOTHNESS_IN_ALBEDO", material.HasProperty("__smoothnessinalbedo") && material.GetFloat("__smoothnessinalbedo") > 0.5f && !material.GetTexture ("_SpecGlossMap"));
+		SetKeyword (material, "ORTHONORMALIZE_TANGENT_BASE", material.HasProperty("_Orthonormalize") && material.GetFloat("_Orthonormalize") > 0.5f);
+		SetKeyword (material, "SMOOTHNESS_IN_ALBEDO", material.HasProperty("_SmoothnessInAlbedo") && material.GetFloat("_SmoothnessInAlbedo") > 0.5f && !material.GetTexture ("_SpecGlossMap"));
 		if (workflowMode == WorkflowMode.Specular)
 			SetKeyword (material, "_SPECGLOSSMAP", material.GetTexture ("_SpecGlossMap"));
 		else if (workflowMode == WorkflowMode.Metallic)
