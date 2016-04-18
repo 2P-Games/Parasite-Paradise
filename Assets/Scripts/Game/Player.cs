@@ -84,7 +84,7 @@ public class Player : MonoBehaviour {
 			}
 		}
 
-		if(Input.GetKeyDown(KeyCode.T))
+		if(Input.GetKeyDown(KeyCode.T) || Input.GetKey(KeyCode.Joystick1Button6))
 		{
 			if(isPossessingEnemy)
 			{
@@ -138,7 +138,7 @@ public class Player : MonoBehaviour {
 		this.TruePlayer.transform.position = gameObject.transform.position;
 
 		// kill infected guy
-		Object.Destroy (this.gameObject);
+		Object.Destroy(this.gameObject);
 	}
 
 	public int TakeDamage(int damageAmount)
