@@ -3,7 +3,7 @@ using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 
-public class LaserSwitchDeactivation : BasicObject {
+public class LaserSwitchDeactivation : MonoBehaviour {
 
     public AudioClip successSound;
     public AudioClip clickSound;
@@ -66,10 +66,7 @@ public class LaserSwitchDeactivation : BasicObject {
         cameraOriginalAnchor = Camera.main.transform.parent;
 	}
 
-    new void Start() {
-
-        base.Start();
-
+    void Start() {
         // Get the transforms for the numbers 1-9.
         Transform[] allChildren = GetComponentsInChildren<Transform>();
         numbers = new List<Number>();
@@ -157,6 +154,7 @@ public class LaserSwitchDeactivation : BasicObject {
 
     void RepositionCamera(bool derp) {
         if (derp) {
+            Camera.main.GetComponentInParent<AutoCam>().enabled = false;
             Camera.main.transform.parent = cameraAnchor;
 
             // Unlock the cursor.
@@ -168,10 +166,11 @@ public class LaserSwitchDeactivation : BasicObject {
             guiField.SetActive(true);
             guiInteractText.SetActive(false);
 
-            playerReference.GetComponent<PlayerControl>().Disable(true);
+            player.GetComponent<ThirdPersonCharacter>().Disable(true);
         }
         else {
             Camera.main.transform.parent = cameraOriginalAnchor;
+            Camera.main.GetComponentInParent<AutoCam>().enabled = true;
             
             // Lock the cursor.
             Cursor.lockState = CursorLockMode.Locked;
@@ -182,7 +181,7 @@ public class LaserSwitchDeactivation : BasicObject {
             guiField.SetActive(false);
             guiInteractText.SetActive(true);
 
-            playerReference.GetComponent<PlayerControl>().Disable(false);
+            player.GetComponent<ThirdPersonCharacter>().Disable(false);
         }
         Camera.main.transform.localPosition = Vector3.zero;
         Camera.main.transform.localRotation = Quaternion.identity;

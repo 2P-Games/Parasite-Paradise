@@ -84,7 +84,7 @@ public class Player : MonoBehaviour {
 			}
 		}
 
-		if(Input.GetKeyDown(KeyCode.T) || Input.GetKey(KeyCode.Joystick1Button6))
+		if(Input.GetKeyDown(KeyCode.T))
 		{
 			if(isPossessingEnemy)
 			{
@@ -112,7 +112,8 @@ public class Player : MonoBehaviour {
 
 		// copy this player script to enemy
 		enemyObject.AddComponent<PlayerControl>();
-        CopyComponent(this, enemyObject);
+		UnityEditorInternal.ComponentUtility.CopyComponent(this);
+		UnityEditorInternal.ComponentUtility.PasteComponentValues(enemyObject.GetComponent<PlayerControl>());
 
 		// disable self
 		this.gameObject.SetActive(false);
@@ -137,7 +138,7 @@ public class Player : MonoBehaviour {
 		this.TruePlayer.transform.position = gameObject.transform.position;
 
 		// kill infected guy
-		Object.Destroy(this.gameObject);
+		Object.Destroy (this.gameObject);
 	}
 
 	public int TakeDamage(int damageAmount)
@@ -224,18 +225,4 @@ public class Player : MonoBehaviour {
 
 	// sound played on death
 	public AudioClip deathSound;
-
-    Component CopyComponent(Component original, GameObject destination)
-    {
-        System.Type type = original.GetType();
-        Component copy = destination.AddComponent(type);
-        // Copied fields can be restricted with BindingFlags
-        System.Reflection.FieldInfo[] fields = type.GetFields();
-        foreach (System.Reflection.FieldInfo field in fields)
-        {
-            field.SetValue(copy, field.GetValue(original));
-        }
-        return copy;
-    }
-
 }

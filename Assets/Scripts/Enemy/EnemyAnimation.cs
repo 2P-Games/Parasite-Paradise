@@ -1,13 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class EnemyAnimation : BasicObject {
+public class EnemyAnimation : MonoBehaviour {
 
     // an array of footstep sounds that will be randomly selected from.
     public AudioClip[] footstepSounds;
     // The number of degrees for which the rotation isn't controlled by Mecanim.
     public float deadZone = 5f;
 
+    // Reference to the player's transform.
+    Transform player;
+    // Reference to the EnemySight script.				
+    EnemySight enemySight;
     // Reference to the nav mesh agent.
     NavMeshAgent nav;
     // Reference to the Animator.			
@@ -22,6 +26,8 @@ public class EnemyAnimation : BasicObject {
 
     void Awake() {
         // Setting up the references.
+        player = GameObject.FindGameObjectWithTag(Tags.player).transform;
+        enemySight = GetComponent<EnemySight>();
         audioSource = GetComponent<AudioSource>();
         nav = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
@@ -63,15 +69,14 @@ public class EnemyAnimation : BasicObject {
         float speed;
         float angle;
 
-        // If the player is in sight... 
-        if (GetComponent<Enemy>().currentState == Enemy.BehaviorState.Alerted) {
+        // If the player is in sight...
+        if (enemySight.playerInShootingRange) {
             // ... the enemy should stop...
             speed = 0f;
 
             // ... and the angle to turn through is towards the player.
-            angle = FindAngle(transform.forward, playerReference.transform.position - transform.position, transform.up);
-			anim.SetBool ("Alerted", true);
-		}
+            angle = FindAngle(transform.forward, player.position - transform.position, transform.up);
+        }
         else {
             // Debug.
             //print(nav.hasPath + " | " + nav.desiredVelocity + " | " + nav.destination);
@@ -88,7 +93,6 @@ public class EnemyAnimation : BasicObject {
                 transform.LookAt(transform.position + nav.desiredVelocity);
                 angle = 0f;
             }
-			anim.SetBool ("Alerted", false);
         }
 
         // Call the Setup function of the helper class with the given parameters.
